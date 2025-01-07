@@ -52,7 +52,7 @@ exec_always unclutter --start-hidden
 # exec xset s 480 dpms 600 600 600
 
 # Start cafeeine
-exec caffeine start
+# exec caffeine start
 
 # Set up daytime/nightime lighting
 exec wlsunset -t 4500 -T 6500 -l -1 -L -1 -g 1.0
