@@ -58,10 +58,10 @@ exec_always unclutter --start-hidden
 exec wlsunset -t 4500 -T 6500 -l -1 -L -1 -g 1.0
 
 # Set up autotiling (Experimental)
-# exec_always nwg-autotiling
+exec_always nwg-autotiling
 
 # Autotiling
-exec autotiling
+# exec autotiling
 
 # Execute nwg-panel
 # exec_always nwg-panel -c ~/.config/nwg-panel/config -s preset-0.css
@@ -231,7 +231,7 @@ exec sleep 20 && obsidian
 #exec sleep 20 && dropbox
 
 # Start synology client
-exec sleep 60 && synology-drive
+# exec sleep 60 && synology-drive
 
 # Start onedrive
 # exec sleep 20 && onedrive
@@ -251,10 +251,7 @@ exec sleep 30 && github-desktop
 exec sleep 30 && vscodium
 
 # Start Jupyter
-exec sleep 30 && jupyter-notebook
-
-# Start VSCodium
-exec sleep 30 && vscodium
+# exec sleep 30 && jupyter-notebook
 
 ########################################
 #  Financials                          #
@@ -302,7 +299,7 @@ exec sleep 50 && strawberry
 exec sleep 40 && vlc
 
 # TuxTV
-exec sleep 40 && freetuxtv
+# exec sleep 40 && freetuxtv
 
 # Start Spotify
 # exec sleep 40 && spotify
@@ -315,10 +312,10 @@ exec sleep 40 && freetuxtv
 ########################################
 
 # Start Steam
-exec sleep 90 && steam
+# exec sleep 90 && steam
 
 # Start Heroic
-exec sleep 90 && heroic
+# exec sleep 90 && heroic
 
 # Start Chiaki
 #exec sleep 90 && chiaki
@@ -331,22 +328,22 @@ exec sleep 90 && heroic
 ########################################
 
 # Start Gimp
-exec sleep 120 && gimp
+# exec sleep 120 && gimp
 
 # Start Inkscape
-exec sleep 120 && inkscape
+# exec sleep 120 && inkscape
 
 # Start OpenToonz
-exec sleep 120 && opentoonz
+# exec sleep 120 && opentoonz
 
 # Start Ardour
-exec sleep 120 && ardour8-new_empty_session
+# exec sleep 120 && ardour8-new_empty_session
 
 # Start Blender
-exec sleep 120 && blender
+# exec sleep 120 && blender
 
 # Start MuseScore
-exec sleep 120 && mscore
+# exec sleep 120 && mscore
 
 ########################################
 # Systems                              #
