@@ -19,7 +19,7 @@
 for_window [shell="xwayland"] title_format "[XWayland] - %title"
 for_window [shell="x_wayland"] title_format "[XWayland] - %title"
 # For applications using XDG, add 'XWayland' to the TITLE
-for_window [shell="xdg_shell"] title_format "[XWayland] - %title"
+for_window [shell="xdg_shell"] title_format "[XWayland-XDG] - %title"
 
 # By window role
 for_window [window_role="pop-up"] floating enable
@@ -98,7 +98,7 @@ for_window [app_id="pavucontrol" ] floating enable, resize set width 40 ppt heig
 ###################
 
 # nmtui
-for_window [title="nmtui"] floating enable,  resize set width 50 ppt height 70 ppt
+for_window [title="nmtui"] floating enable,  resize set width 30 ppt height 40 ppt
 
 # Network Manager Connection editor
 for_window [app_id="(?i)(?:nm-connection-editor)"] floating enable
@@ -119,10 +119,10 @@ for_window [app_id="blueman-manager"] floating enable, resize set width 40 ppt h
 for_window [app_id="foot"] focus, floating enable, sticky enable, border pixel 1, resize set width 40 ppt height 30 ppt
 
 # Tilix
-for_window [app_id="tilix"] focus, floating enable, sticky enable, border pixel 1
+for_window [app_id="tilix"] focus
 
 # XFCE-Terminal
-for_window [app_id="xfce-terminal"] focus, floating enable, sticky enable, border pixel 1
+for_window [app_id="xfce-terminal"] focus
 
 ###################
 # Thunar
