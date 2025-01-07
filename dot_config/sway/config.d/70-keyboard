@@ -1,0 +1,64 @@
+##############################################################################
+# Input - Keyboard                                                           #
+##############################################################################
+
+#######################################
+# Dell keyboard
+#######################################
+
+# Ex:
+# Input device: AT Translated Set 2 keyboard
+#  Type: Keyboard
+#  Identifier: 1:1:AT_Translated_Set_2_keyboard
+#  Product ID: 1
+#  Vendor ID: 1
+#  Active Keyboard Layout: English (US)
+#  Libinput Send Events: enabled
+
+input "1:1:AT_Translated_Set_2_keyboard" {
+  xkb_layout us
+  repeat_delay 300
+  repeat_rate 40
+  xkb_capslock disabled
+  xkb_numlock disabled
+}
+
+#######################################
+# external Lenovo keyboard
+#######################################
+
+# Ex:
+# Input device: LiteOn Lenovo Traditional USB Keyboard
+#   Type: Keyboard
+#   Identifier: 6127:24729:LiteOn_Lenovo_Traditional_USB_Keyboard
+#   Product ID: 24729
+#   Vendor ID: 6127
+#   Active Keyboard Layout: English (US)
+
+input "6127:24729:LiteOn_Lenovo_Traditional_USB_Keyboard" {
+  xkb_layout us
+  repeat_delay 300
+  repeat_rate 40
+  xkb_capslock disabled
+  xkb_numlock enabled
+}
+
+# Set keyboard layout and variant based on current system settings
+exec_always {
+    'swaymsg input type:keyboard xkb_layout "$(localectl status | grep "X11 Layout" | sed -e "s/^.*X11 Layout://")"'
+    'swaymsg input type:keyboard xkb_variant "$(localectl status | grep "X11 Variant" | sed -e "s/^.*X11 Variant://")"'
+}
+
+# Bind the Key to open launcher on release
+bindsym --release Super_L exec $launcher
+
+# # Toggle between keyboard layouts. This example has the "us" and "gb"
+# # keyboard layouts, and uses Alt+Shift to toggle between them.
+# input "type:keyboard" {
+#     xkb_layout "us,gb"
+#     xkb_options "grp:alt_shift_toggle"
+# }
+# # Assign the same binding to "pkill -RTMIN+1 waybar" to send signal to
+# # the Waybar keyboard module (so the module shows the updated layout).
+# # This example uses Alt + left Shift.
+# bindsym Alt+Shift_L exec "pkill -RTMIN+1 waybar"

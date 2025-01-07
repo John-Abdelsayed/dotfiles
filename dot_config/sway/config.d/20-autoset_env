@@ -1,0 +1,113 @@
+############################################################################
+# Environment
+############################################################################
+
+# Automatically assign a dedicated systemd scope to the GUI applications
+# launched in the same cgroup as the compositor. This could be helpful for
+# implementing cgroup-based resource management and would be necessary when
+# `systemd-oomd` is in use.
+#
+# Limitations: The script is using i3ipc window:new event to detect application
+# launches and would fail to detect background apps or special surfaces.
+# Therefore it's recommended to supplement the script with use of systemd user
+# services for such background apps.
+#
+exec /usr/lib/sway-systemd/assign-cgroups.py
+
+# Address several issues with DBus activation and systemd user sessions
+#
+# 1. DBus-activated and systemd services do not share the environment with user
+#    login session. In order to make the applications that have GUI or interact
+#    with the compositor work as a systemd user service, certain variables must
+#    be propagated to the systemd and dbus.
+#    Possible (but not exhaustive) list of variables:
+#    - DISPLAY - for X11 applications that are started as user session services
+#    - WAYLAND_DISPLAY - similarly, this is needed for wayland-native services
+#    - I3SOCK/SWAYSOCK - allow services to talk with sway using i3 IPC protocol
+#
+# 2. `xdg-desktop-portal` requires XDG_CURRENT_DESKTOP to be set in order to
+#    select the right implementation for screenshot and screencast portals.
+#    With all the numerous ways to start sway, it's not possible to rely on the
+#    right value of the XDG_CURRENT_DESKTOP variable within the login session,
+#    therefore the script will ensure that it is always set to `sway`.
+#
+# 3. GUI applications started as a systemd service (or via xdg-autostart-generator)
+#    may rely on the XDG_SESSION_TYPE variable to select the backend.
+#    Ensure that it is always set to `wayland`.
+#
+# 4. The common way to autostart a systemd service along with the desktop
+#    environment is to add it to a `graphical-session.target`. However, systemd
+#    forbids starting the graphical session target directly and encourages use
+#    of an environment-specific target units. Therefore, the integration
+#    package here provides and uses `sway-session.target` which would bind to
+#    the `graphical-session.target`.
+#
+# 5. Stop the target and unset the variables when the compositor exits.
+#
+exec /usr/lib/sway-systemd/session.sh
+
+
+# Exports any env vars from nside ~/.config/environment.d/
+exec export $(/usr/lib/systemd/user-environment-generators/30-systemd-environment-d-generator)
+
+######################################
+# systemd Env Variables
+######################################
+
+######################################
+# XDG_CURRENT_DESKTOP
+######################################
+
+# Some variables need to be exported to systemd and/or dbus activation environments so tools that rely on them work properly.
+# The essential ones are: WAYLAND_DISPLAY, DISPLAY (if XWayland is used), XDG_CURRENT_DESKTOP,
+# plus Sway's: SWAYSOCK, I3SOCK, XCURSOR_SIZE, XCURSOR_THEME.
+# sway does not set DISPLAY/WAYLAND_DISPLAY in the systemd user environment
+# See FS#63021
+# Adapted from xorg's 50-systemd-user.sh, which achieves a similar goal.
+
+# Upstream refuses to set XDG_CURRENT_DESKTOP so we have to.
+exec systemctl --user set-environment XDG_CURRENT_DESKTOP=sway
+exec systemctl --user import-environment DISPLAY \
+                                         SWAYSOCK \
+                                         WAYLAND_DISPLAY \
+                                         XDG_CURRENT_DESKTOP
+
+exec hash dbus-update-activation-environment 2>/dev/null && \
+     dbus-update-activation-environment --systemd DISPLAY \
+                                                  SWAYSOCK \
+                                                  XDG_CURRENT_DESKTOP=sway \
+                                                  WAYLAND_DISPLAY
+
+# Export should be performed from context of running sway process, via exec statements in sway's configuration:
+#exec systemctl --user import-environment WAYLAND_DISPLAY DISPLAY XDG_CURRENT_DESKTOP SWAYSOCK I3SOCK XCURSOR_SIZE XCURSOR_THEME
+#If dbus-broker dbus implementation is used, that's it. It reuses activation environment of systemd.
+
+# If classic dbus implementation is used, it requires updating its own separate environment:
+#exec dbus-update-activation-environment WAYLAND_DISPLAY DISPLAY XDG_CURRENT_DESKTOP SWAYSOCK I3SOCK XCURSOR_SIZE XCURSOR_THEME
+
+          # This may be obsolete or deprecated due to the above
+          ######################################
+          # dbus
+          ######################################
+
+          # Update dbux environments with display variables
+          #exec hash dbus-update-activation-environment 2>/dev/null && \
+          #     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+
+          # exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+
+
+
+
+######################################
+# Polkit
+######################################
+
+# Auth with gnome polkit-gnome:
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+# Auth with polkit
+#exec /usr/lib/polkit/polkit/polkit-1
+
+# Auth with lxpolkit
+#exec /usr/bin/lxpolkit

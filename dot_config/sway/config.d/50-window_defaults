@@ -1,0 +1,215 @@
+##########################################################
+# Window Defaults
+##########################################################
+
+#######################################
+# Application Window Defaults
+#######################################
+
+###################
+# By Window Type
+###################
+
+
+# By Shell
+# Title format for windows
+# THIS IS USED FOR OBTAINING WINDOW TITLE INFORMATION!
+# This section is often un/commented.
+# For applications using xwayland, add 'XWayland' to the TITLE
+for_window [shell="xwayland"] title_format "[XWayland] - %title"
+for_window [shell="x_wayland"] title_format "[XWayland] - %title"
+# For applications using XDG, add 'XWayland' to the TITLE
+for_window [shell="xdg_shell"] title_format "[XWayland] - %title"
+
+# By window role
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_role="About"] floating enable
+
+# By window type
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
+
+# By window title
+for_window [title="(?i)Picture in picture"] floating enable, sticky enable
+for_window [title="(?i)Picture in Picture"] floating enable, sticky enable
+for_window [title="Reminders"] floating enable, border pixel 1, resize set width 30 ppt height 20 ppt
+for_window [title="Windows - Soft Keyboard"] floating enable, border pixel 1, resize set width 60 ppt height 40 ppt
+for_window [title="Save File"] floating enable
+for_window [title="(?i)(?:copying|deleting|moving)"] floating enable
+
+# switch to workspace with urgent window
+for_window [urgent="latest"] focus
+
+# focus on window activation
+focus_on_window_activation   focus
+
+#######################################
+# Inhibit Idle
+#######################################
+
+# Inhibit idle
+for_window [app_id="firefox"] inhibit_idle fullscreen
+for_window [app_id="Chromium"] inhibit_idle fullscreen
+
+# Show a popup if the computer is in full screen
+popup_during_fullscreen smart
+
+
+# !TODO
+# "Wayland to X Recording bridge — Xwayland Video Bridge" (xwayland, pid: 2913, instance: "xwaylandvideobridge", class: "xwaylandvideobridge", X11 window: 0xA00009)
+
+
+#######################################
+# Application-Specific
+#######################################
+
+
+###################
+# Chromium/Firefox
+###################
+
+# Set no border for Chromium/FF
+for_window [app_id="(?i)(?:firefox|chromium|Librewolf)"] border none
+
+# Kill Firefox sharing indicator
+for_window [app_id="firefox" title="Firefox — Sharing Indicator"] kill
+
+###################
+# Video
+###################
+
+# Set mpv to float
+for_window [app_id="mpv"] floating enable, sticky enable, resize set width 40 ppt height 30 ppt
+
+# Set vlc to float
+# for_window [class="vlc" instance="vlc"] floating enable, sticky enable, resize set width 40 ppt height 30 ppt
+
+###################
+# Sound
+###################
+
+for_window [app_id="pavucontrol" ] floating enable, resize set width 40 ppt height 30 ppt
+
+###################
+# Network
+###################
+
+# nmtui
+for_window [title="nmtui"] floating enable,  resize set width 50 ppt height 70 ppt
+
+# Network Manager Connection editor
+for_window [app_id="(?i)(?:nm-connection-editor)"] floating enable
+
+###################
+# Bluetooth
+###################
+
+for_window [title="Blueberry" instance="blueberry.py"] floating enable, resize set width 40 ppt height 30 ppt
+for_window [class="Bluetooth-sendto" instance="bluetooth-sendto"] floating enable
+for_window [app_id="blueman-manager"] floating enable, resize set width 40 ppt height 30 ppt
+
+###################
+# Terminals
+###################
+
+# Foot
+for_window [app_id="foot"] focus, floating enable, sticky enable, border pixel 1, resize set width 40 ppt height 30 ppt
+
+# Tilix
+for_window [app_id="tilix"] focus, floating enable, sticky enable, border pixel 1
+
+# XFCE-Terminal
+for_window [app_id="xfce-terminal"] focus, floating enable, sticky enable, border pixel 1
+
+###################
+# Thunar
+###################
+
+# Thunar File Copy/Overwrite
+for_window [app_id="thunar" title="Confirm to replace files"] focus, urgent enable, floating enable, sticky enable, border pixel 1, resize set width 40 ppt height 30 ppt
+for_window [app_id="thunar" title="File Operations Progress"] floating enable, border pixel 1, resize set width 20 ppt height 10 ppt
+for_window [app_id="thunar" title="File Operation Progress"] floating enable, border pixel 1, resize set width 20 ppt height 10 ppt
+
+###################
+# Editors
+###################
+
+# Mousepad
+for_window [app_id="mousepad"] floating enable, sticky enable, border pixel 1, resize set width 40 ppt height 60 ppt
+
+###################
+# Galculator
+###################
+
+for_window [app_id="galculator"] floating enable, sticky enable, border pixel 1, resize set width 20 ppt height 30 ppt
+
+###################
+# OpenSnitch
+###################
+
+for_window [app_id="opensnitch_ui"] urgent enable, floating enable, sticky enable, border pixel 5, resize set width 60 ppt height 40 ppt
+
+###################
+# QEMU
+###################
+
+for_window [app_id="virt-manager"] floating enable
+
+###################
+# GenyMotion
+###################
+
+for_window [instance="player" class="Genymotion Player"] floating enable, sticky enable, border pixel 5, resize set width 60 ppt height 40 ppt
+
+###################
+# scrcpy
+###################
+
+for_window [instance="scrcpy" class="scrcpy"] floating enable, border pixel 1, resize set width 20 ppt height 80 ppt
+
+#######################################
+# Type Specific - Urgent, Focus, Floating, and Sticky
+#######################################
+
+###################
+# Focus
+###################
+
+# Focus XFCE term on open
+for_window [class="(?i)xfce4-terminal"] focus
+
+# Focus on galculator
+for_window [app_id="galculator"] focus
+
+# Focus FF term on open
+for_window [app_id="firefox"] focus
+
+# Focus Opensnitch when it prompts for FW rules
+for_window [app_id="opensnitch_ui"] focus
+
+# Focus Evolution Calendar
+for_window [title="Calendar - Evolution"] focus
+
+###################
+# Floating
+###################
+
+# azote, gnome-disks
+for_window [app_id="(?i)(?:azote|gnome-disks)"] floating enable
+
+for_window [app_id="xsensors"] floating enable
+
+
+###################
+# Floating (nontiling)
+###################
+
+# set floating (nontiling) for special apps:
+for_window [class="Xsane" instance="xsane"] floating enable
+for_window [class="qt5ct" instance="qt5ct"] floating enable, resize set width 60 ppt height 50 ppt
+for_window [app_id="floating_shell_portrait"] floating enable, sticky enable, border pixel 1, resize set width 30 ppt height 40 ppt
+for_window [title="htop"] floating enable, border pixel 1, resize set width 50 ppt height 70 ppt
+for_window [title="gtop"] floating enable, border pixel 1, resize set width 50 ppt height 70 ppt

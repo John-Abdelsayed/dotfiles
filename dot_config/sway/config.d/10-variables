@@ -1,0 +1,154 @@
+##############################################################################
+# Variables                                                                 #
+##############################################################################
+
+#######################################
+# Mod Key                             #
+#######################################
+
+# Set the mod key
+# Mod1 = Alt
+# Mod4 = Super
+set $mod Mod4
+
+#######################################
+# Vim Key                             #
+#######################################
+
+# Add Vim key support
+#set $left h
+#set $down j
+#set $up k
+#set $right l
+
+#######################################
+# Config for Workspace Behavior       #
+#######################################
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1   "1: - Term"
+set $ws2   "2: - SecTerm"
+set $ws3   "3: - Term"
+set $ws4   "4: - Term"
+set $ws5   "5: - Browse"
+set $ws6   "6: - Browse"
+set $ws7   "7: - Code"
+set $ws8   "8: - Git"
+set $ws9   "9: - Chat"
+set $ws10  "10: - Mail"
+set $ws11  "11: - Tasks"
+set $ws12  "12: - Files"
+set $ws13  "13: - Infra"
+set $ws14  "14: - Cloud"
+set $ws15  "15: - O365"
+set $ws16  "16: - AI"
+set $ws17  "17: - Fin"
+set $ws18  "18: - Jrnl"
+set $ws19  "19:󱤙 - Gaming"
+set $ws20  "20: - Media"
+set $ws21  "21: - Phone"
+set $ws22  "22: - Android"
+set $ws23  "23: - Music"
+set $ws24  "24: - Produce"
+set $ws25  "25:󰽉 - Drawing"
+set $ws26  "26:󰽉 - Animate"
+set $ws27  "27: - Database"
+set $ws28  "28:󰢹 - Remote"
+set $ws29  "29: - VM"
+set $ws30  "30: - Docker"
+
+#######################################
+# Terminal                            #
+#######################################
+
+# Set default terminal emulator
+set $term foot
+
+# Set default terminal emulator (Wayland)
+set $alt_term tilix
+
+# Set guake
+set $guaketoggle guake-toggle
+set $guake guake
+
+#######################################
+# Browser                             #
+#######################################
+
+set $browser MOZ_ENABLE_WAYLAND=1 firefox
+
+#set $browser firefox
+set $alt_browser librewolf
+
+#######################################
+# File Manager                        #
+#######################################
+
+set $filemanager nautilus
+set $alt_filemanager nnn-nerd
+
+#######################################
+# Text Editor                         #
+#######################################
+
+set $editor mousepad
+set $alt_editor gedit
+
+#######################################
+# Calculator                          #
+#######################################
+
+set $calc galculator
+set $alt_calc qalculate-gtk
+
+#######################################
+# Menus		        	              #
+#######################################
+
+# Application launcher - Fuzzel
+set $launcher fuzzel
+
+# Application launcher - NWG Menu
+set $alt_launcher nwg-menu
+
+# Application menu - NWG Drawer
+set $menu nwg-drawer
+
+# Application menu - Wofi
+set $alt_menu wofi -m $(expr $(swaymsg -t get_tree | jq '.nodes | map([recurse(.nodes[]?, .floating_nodes[]?) | .focused] | any) | index(true)') - 1) --show drun --run-command 'swaymsg exec -- {cmd}'
+
+# Dock
+set $dock nwg-dock -p left -s preset-1.css
+
+# Window Cycling
+# Old rofi window switching
+# set $cycle rofi -show window -config ~/.config/rofi/rofidmenu.rasi
+
+# Wofi does not have the ability to do window switching on its own as there is no way to do this with wayland/wlroots protocols
+# However if you're using sway you can use swaymsg with dmenu mode  to  accomplish  it.
+# The  following script can be used to do window switching:
+set $cycle swaymsg -t get_tree | jq -r '.nodes[].nodes[] | if .nodes then [recurse(.nodes[])] else [] end + .floating_nodes | .[] | select(.nodes==[]) | ((.id | tostring) + " " + .name)' | wofi --show dmenu | read -r id name swaymsg "[con_id=$id]" focus
+
+# Power Menu
+set $powermenu nwg-bar
+set $alt_powermenu ~/.config/sway/scripts/power_menu.sh
+
+# Wifi
+set $wifi nmcli
+
+# Bluetooth
+set $blu2th bluetooth-manager
+
+#######################################
+# exit                                #
+#######################################
+
+# Set the exit to perform launcher actions
+set $exit $launcher
+
+####################
+# Idle configuration
+####################
+
+set $lock swaylock -C ~/.config/swaylock/config

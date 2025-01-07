@@ -1,0 +1,77 @@
+#################################################################
+# Autostart Apps on login: 
+#################################################################
+
+########################################
+#  Artificial Intelligence (AI)        #
+########################################
+
+# Start HuggingChat
+#exec sleep 30 && firefoxpwa site launch 01GZ809WW5Y34MADZE4D0TAVHS
+
+######################################
+# Infra
+######################################
+
+# OPNSense
+exec sleep 40 && firefoxpwa site launch 01J4NK309P295D8HMYH0J5Y07K
+# Portainer
+exec sleep 40 && firefoxpwa site launch 01J4MB4EFNN3S8JX1XDQ0JKBYC
+# DNS 1
+exec sleep 40 && firefoxpwa site launch 01J4MAZZJAVFQYEWDE066EZKEQ
+# DNS 2
+exec sleep 40 && firefoxpwa site launch 01J4MB0A3CJYRMR1GEPMCRSVZS
+# Grafana
+exec sleep 40 && firefoxpwa site launch 01J4MB2HKQPR64QQRCSBVKJZAD
+# NXRP
+exec sleep 40 && firefoxpwa site launch 01J99GQHAK49961EKBP6ZKXQKK
+
+
+########################################
+# DTIG Cloud Apps                      #
+########################################
+
+# Start DTIG OPNSense
+exec sleep 50 && firefoxpwa site launch 01J4NK309P295D8HMYH0J5Y07K
+# Start DTIG Azure
+exec sleep 50 && firefoxpwa site launch 01J7BY3T600KJFZN49YE1BWTSN
+# Start DTIG ADO
+exec sleep 50 && firefoxpwa site launch 01J7BY8P960F6KGBK05ZDWQ40B
+# Start DTIG Synology
+exec sleep 50 && firefoxpwa site launch 01J3N5Q88YHY7J4D6B8PM27P85
+# Start DTIG To-Do
+exec sleep 50 && firefoxpwa site launch 01J5NM5W9PRMV62DEJJQBGHR17
+# Start DTIG IT Tools
+exec sleep 50 && firefoxpwa site launch 01J4MB3VG5W7XP15VEKTN13BBQ
+
+
+########################################
+# Development                          #
+########################################
+
+# Start Gitea
+exec sleep 60 && firefoxpwa site launch 01J48SZ63W0CB8CEDYDWV683GK
+# Start GitHub
+exec sleep 60 && firefoxpwa site launch 01J4MCFGNV9PRWNN7F9B7AX45A
+
+
+########################################
+#  Financials                          #
+########################################
+
+# Start Financials
+# Xero
+#exec sleep 40 && firefoxpwa site launch 01H8HBEQRHJXVWDV7CY6XAZ8AW
+# QBO
+#exec sleep 40 && firefoxpwa site launch 01GZ1M1VY13T291BVVV5TSGE4Z
+# Chase
+#exec sleep 40 && firefoxpwa site launch 01H960MR2RSEP4QVPCH0BX2X47
+
+
+########################################
+# Media                                #
+########################################
+
+# Start Netflix
+exec sleep 40 && firefoxpwa site launch 01JCSK69G2GM70FNAPA4DS5M0X
+# Start Hulu

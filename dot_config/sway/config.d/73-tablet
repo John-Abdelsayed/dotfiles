@@ -1,0 +1,23 @@
+##############################################################################
+# Input - Tablet                                                             #
+##############################################################################
+
+# Compute region:
+# resolution: (3200x1800)
+# area wacom: (157x98mm) >$ libinput list-devices
+# -> 1800 * 157 / 3200 = x -> x / 98 = y (use 'y')
+
+
+
+input "1386:887:Wacom_Intuos_BT_S_Pen" {
+    map_to_output DP-1
+    map_from_region 0.0x0.0 1.0x0.901
+}
+input "1386:887:Wacom_Intuos_BT_S_Pen_(WL)_Finger" {
+    click_method clickfinger
+    drag enabled
+    scroll_method two_finger
+    natural_scroll enabled
+    tap enabled
+    accel_profile adaptive
+}

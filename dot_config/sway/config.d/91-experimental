@@ -1,0 +1,91 @@
+########################################
+# Experimental
+########################################
+
+####################
+# NWG
+####################
+
+# Execute Clipman
+# bindsym Mod1+c            exec nwg-clipman
+
+# Execute nwg-lock
+#bindsym Mod1+l            exec nwg-lock
+
+# Execute nwg-shell-help
+bindsym $mod+F1           exec nwg-shell-help
+
+####################
+# Alternative Window Bindings
+####################
+
+# Keybinding list in editor:
+#bindsym $mod+F1 exec xed ~/.config/sway/keybindings
+
+# Memorize and switch target windows
+#Configuration example:
+
+# window switch setting
+	#mode $mode_set_switch_window {
+	#    bindsym 1 mark 1; mode "default"
+	#    bindsym 2 mark 2; mode "default"
+	#    bindsym 3 mark 3; mode "default"
+	#set $mode_set_switch_window "set_switch_window: [0]-[9]"
+	#    bindsym 4 mark 4; mode "default"
+	#    bindsym 5 mark 5; mode "default"
+	#    bindsym 6 mark 6; mode "default"
+	#    bindsym 7 mark 7; mode "default"
+	#    bindsym 8 mark 8; mode "default"
+	#    bindsym 9 mark 9; mode "default"
+	#    bindsym 0 mark 0; mode "default"
+	#    bindsym Return mode "default"
+	#    bindsym Escape mode "default"
+	#}
+
+	#bindsym $mod+ctrl+t mode $mode_set_switch_window
+	#set $mode_switch_window "switch_window: [0]-[9]"
+	#mode $mode_switch_window {
+	#    bindsym 1 [con_mark="1"] focus; mode "default"
+	#    bindsym 2 [con_mark="2"] focus; mode "default"
+	#    bindsym 3 [con_mark="3"] focus; mode "default"
+	#    bindsym 4 [con_mark="4"] focus; mode "default"
+	#    bindsym 5 [con_mark="5"] focus; mode "default"
+	#    bindsym 6 [con_mark="6"] focus; mode "default"
+	#    bindsym 7 [con_mark="7"] focus; mode "default"
+	#    bindsym 8 [con_mark="8"] focus; mode "default"
+	#    bindsym 9 [con_mark="9"] focus; mode "default"
+	#    bindsym 0 [con_mark="0"] focus; mode "default"
+	#    bindsym t mode $mode_set_switch_window
+	#    bindsym Return mode "default"
+	#    bindsym Escape mode "default"
+	#}
+	#bindsym $mod+t mode $mode_switch_window
+
+
+
+# Wait until a StatusNotifierItem tray implementation is available and
+# process XDG autostart entries.
+#
+# This horror has to exist because
+#
+#  - SNI spec mandates that if `IsStatusNotifierHostRegistered` is not set,
+#    the client should fall back to the Freedesktop System Tray specification
+#    (XEmbed).
+#  - There are actual implementations that take this seriously and implement
+#    a fallback *even if* StatusNotifierWatcher is already DBus-activated.
+#  - https://github.com/systemd/systemd/issues/3750
+#
+exec /usr/lib/sway-systemd/wait-sni-ready && \
+    systemctl --user start sway-xdg-autostart.target
+
+
+# Apply system-wide XKB configuration stored in systemd-localed.
+#
+# The configuration can be viewed with `localectl` and modified
+# with `localectl set-x11-keymap`.
+#
+# Normal mode will pick up the configuration changes immediately
+# and oneshot mode will require a Sway config reload.
+
+# exec /usr/lib/sway-systemd/locale1-xkb-config
+exec_always /usr/lib/sway-systemd/locale1-xkb-config --oneshot

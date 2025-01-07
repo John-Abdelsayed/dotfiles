@@ -1,0 +1,92 @@
+##############################################################################
+# Workspace to Display Bindings                                                               #
+##############################################################################
+
+# Laptop = eDP-1
+# Main Display = DP-4
+# Side Display = DP-3
+
+# Change Terminals to alternate screens
+workspace $ws1 output DP-4
+workspace $ws3 output DP-3
+workspace $ws4 output DP-4
+
+# Change one of the terminal screens to always
+# open on the laptop
+workspace $ws2 output eDP-1
+
+# Change Browsers to alternate screens
+workspace $ws5 output DP-4
+workspace $ws6 output DP-3
+
+# Change Dev/Code to alternate screens
+workspace $ws7 output DP-4
+workspace $ws8 output DP-3
+
+# Change Chat to main screen
+workspace $ws9 output DP-4
+
+# Change Email to alternate screen
+workspace $ws10 output DP-3
+
+# Change Tasks to alternate screen
+workspace $ws11 output DP-3
+
+# Change Files to alternate screen
+workspace $ws12 output DP-3
+
+# Change Infrastructure to alternate screen
+workspace $ws13 output DP-4
+
+# Change Cloud to alternate screen
+workspace $ws14 output DP-3
+
+# Change O365 to alternate screen
+workspace $ws15 output DP-3
+
+# Change AI to alternate screen
+workspace $ws16 output DP-3
+
+# Change Finance to main screen
+workspace $ws17 output DP-4
+
+# Change PKM to alternate screen
+workspace $ws18 output DP-3
+
+# Change Recreation to main source
+workspace $ws19 output DP-4
+
+# Change Media to primary laptop screen
+workspace $ws20 output eDP-1
+
+# Change Tasks to alternate screen
+workspace $ws21 output DP-3
+
+# Change Files to alternate screen
+workspace $ws22 output DP-3
+
+# Change Infrastructure to alternate screen
+workspace $ws23 output DP-4
+
+# Change Cloud to alternate screen
+workspace $ws24 output DP-3
+
+# Change O365 to alternate screen
+workspace $ws25 output DP-3
+
+# Change AI to alternate screen
+workspace $ws26 output DP-3
+
+# Change Finance to main screen
+workspace $ws27 output DP-4
+
+# Change PKM to alternate screen
+workspace $ws28 output DP-3
+
+# Change Recreation to main source
+workspace $ws29 output DP-4
+
+# Change Media to primary laptop screen
+workspace $ws30 output eDP-1
+
+########################################

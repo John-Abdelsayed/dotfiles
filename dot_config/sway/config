@@ -1,0 +1,50 @@
+##############################################################################
+# Sourcing                                                                   #
+##############################################################################
+
+##########################
+# Include all files
+##########################
+
+#include $HOME/.config/sway/config.d/*
+
+##########################
+# Include specific files
+##########################
+
+# include variables
+include $HOME/.config/sway/config.d/10-variables
+
+# include autostart
+include $HOME/.config/sway/config.d/20-autoset_env
+
+# include the default config
+include $HOME/.config/sway/config.d/30-keybindings
+
+# include outputs
+include $HOME/.config/sway/config.d/40-outputs
+
+# include application defaults
+include $HOME/.config/sway/config.d/50-window_defaults
+
+# include workspace to display binding
+include $HOME/.config/sway/config.d/60-workspace_display_binding
+
+# include keyboards, mice, and tablet input
+include $HOME/.config/sway/config.d/70-keyboard
+include $HOME/.config/sway/config.d/71-pointer
+include $HOME/.config/sway/config.d/72-touchpad
+include $HOME/.config/sway/config.d/73-tablet
+
+# include laptop lid close/open
+include $HOME/.config/sway/config.d/74-clamshell
+
+# include autostart apps
+include $HOME/.config/sway/config.d/80-autostart_my_apps
+include $HOME/.config/sway/config.d/81-autostart_my_PWAs
+
+# include themes
+include $HOME/.config/sway/config.d/90-theme
+
+# include experimental features
+include $HOME/.config/sway/config.d/91-experimental
