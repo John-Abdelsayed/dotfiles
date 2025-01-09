@@ -23,61 +23,7 @@
             "group/system",
             "group/hardware",
             "wireplumber"
-        ],
-                "group/privgroup": {
-                    "orientation": "inherit",
-                    "drawer": {
-                        "transition-duration": 500,
-                        "children-class": "system",
-                        "transition-left-to-right": false
-                    },
-                    "modules": [
-                        "privacy"
-                    ]
-                },
-                "group/system": {
-                    "orientation": "inherit",
-                    "drawer": {
-                        "transition-duration": 500,
-                        "children-class": "system",
-                        "transition-left-to-right": false
-                    },
-                    "modules": [
-                        "systemd-failed-units",
-                        "custom/vm",
-                        "custom/containers"
-                    ]
-                },
-                "group/screenrecord": {
-                    "orientation": "inherit",
-                    "drawer": {
-                        "transition-duration": 500,
-                        "children-class": "screenrecord",
-                        "transition-left-to-right": false
-                    },
-                    "modules": [
-                        "custom/grimshot",
-                        "custom/wfrecord"
-                    ]
-                },
-                "group/hardware": {
-                    "orientation": "inherit",
-                    "drawer": {
-                        "transition-duration": 500,
-                        "children-class": "hardware",
-                        "transition-left-to-right": false
-                    },
-                    "modules": [
-                        "battery",
-                        "temperature",
-                        "cpu",
-                        "memory",
-                        "disk",
-                        "network",
-                        "keyboard-state",
-                        "custom/keyboard-layout"
-                    ]
-                }
+        ]
     },
     {
         "name": "bottom",
@@ -102,19 +48,6 @@
             "custom/notification",
             "clock",
             "custom/power"
-        ],
-            "group/control": {
-                "orientation": "inherit",
-                "drawer": {
-                    "transition-duration": 500,
-                    "children-class": "system",
-                    "transition-left-to-right": false
-                },
-                "modules": [
-                    "idle_inhibitor",
-                    "backlight",
-                    "power-profiles-daemon"
-                ]
-            }
+        ]
     }
 ]

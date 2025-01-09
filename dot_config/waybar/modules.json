@@ -1,341 +1,407 @@
 [
     {
-        
-            "tray": {
-                "icon-size": 16,
-                "spacing": 10,
-                "show-passive-items": true
-            },
-            "sway/scratchpad": {
-                "format": "{icon} {count}",
-                "show-empty": true,
-                "format-icons": [
-                    "",
-                    ""
-                ],
-                "tooltip": true,
-                "tooltip-format": "{app}: {title}"
-            },
-            "privacy": {
-                "icon-spacing": 4,
-                "icon-size": 18,
-                "transition-duration": 250,
-                "modules": [
-                    {
-                        "type": "screenshare",
-                        "tooltip": true,
-                        "tooltip-icon-size": 24
+    "group/privgroup": {
+                    "orientation": "inherit",
+                    "drawer": {
+                        "transition-duration": 500,
+                        "children-class": "system",
+                        "transition-left-to-right": false
                     },
-                    {
-                        "type": "audio-out",
-                        "tooltip": true,
-                        "tooltip-icon-size": 24
+                    "modules": [
+                        "privacy"
+                    ]
+        },
+        "group/system": {
+            "orientation": "inherit",
+            "drawer": {
+                "transition-duration": 500,
+                "children-class": "system",
+                "transition-left-to-right": false
+            },
+            "modules": [
+                "systemd-failed-units",
+                "custom/vm",
+                "custom/containers"
+            ]
+        },
+        "group/screenrecord": {
+            "orientation": "inherit",
+            "drawer": {
+                "transition-duration": 500,
+                "children-class": "screenrecord",
+                "transition-left-to-right": false
+            },
+            "modules": [
+                "custom/grimshot",
+                "custom/wfrecord"
+            ]
+        },
+        "group/hardware": {
+                    "orientation": "inherit",
+                    "drawer": {
+                        "transition-duration": 500,
+                        "children-class": "hardware",
+                        "transition-left-to-right": false
                     },
-                    {
-                        "type": "audio-in",
-                        "tooltip": true,
-                        "tooltip-icon-size": 24
-                    }
+                    "modules": [
+                        "battery",
+                        "temperature",
+                        "cpu",
+                        "memory",
+                        "disk",
+                        "network",
+                        "keyboard-state",
+                        "custom/keyboard-layout"
+                    ]
+    },
+    "group/control": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "system",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "idle_inhibitor",
+            "backlight",
+            "power-profiles-daemon"
+        ]
+    },
+        "tray": {
+            "icon-size": 16,
+            "spacing": 10,
+            "show-passive-items": true
+        },
+        "sway/scratchpad": {
+            "format": "{icon} {count}",
+            "show-empty": true,
+            "format-icons": [
+                "",
+                ""
+            ],
+            "tooltip": true,
+            "tooltip-format": "{app}: {title}"
+        },
+        "privacy": {
+            "icon-spacing": 4,
+            "icon-size": 18,
+            "transition-duration": 250,
+            "modules": [
+                {
+                    "type": "screenshare",
+                    "tooltip": true,
+                    "tooltip-icon-size": 24
+                },
+                {
+                    "type": "audio-out",
+                    "tooltip": true,
+                    "tooltip-icon-size": 24
+                },
+                {
+                    "type": "audio-in",
+                    "tooltip": true,
+                    "tooltip-icon-size": 24
+                }
+            ]
+        },
+        "wireplumber": {
+            "scroll-step": 2,
+            "format": "{volume}% {icon}",
+            "format-bluetooth": "{volume}%  ",
+            "format-bluetooth-muted": "  ",
+            "format-muted": " ",
+            "format-source": "{volume}% ",
+            "format-source-muted": "",
+            "format-icons": {
+                "headphone": "",
+                "hands-free": "󰙌",
+                "headset": "󰋎",
+                "phone": "",
+                "portable": "",
+                "car": "",
+                "default": [
+                    "",
+                    "",
+                    ""
                 ]
             },
-            "wireplumber": {
-                "scroll-step": 2,
-                "format": "{volume}% {icon}",
-                "format-bluetooth": "{volume}%  ",
-                "format-bluetooth-muted": "  ",
-                "format-muted": " ",
-                "format-source": "{volume}% ",
-                "format-source-muted": "",
-                "format-icons": {
-                    "headphone": "",
-                    "hands-free": "󰙌",
-                    "headset": "󰋎",
-                    "phone": "",
-                    "portable": "",
-                    "car": "",
-                    "default": [
-                        "",
-                        "",
-                        ""
-                    ]
-                },
+        "on-click": "pavucontrol",
+        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+        },
+        "pulseaudio": {
+            "scroll-step": 2,
+            "format": "{volume}% {icon} {format_source}",
+            "format-bluetooth": "{volume}% {icon} {format_source}",
+            "format-bluetooth-muted": " {icon} {format_source}",
+            "format-muted": " {format_source}",
+            "format-source": "{volume}% ",
+            "format-source-muted": "",
+            "format-icons": {
+                "headphone": "",
+                "hands-free": "󰙌",
+                "headset": "󰋎",
+                "phone": "",
+                "portable": "",
+                "car": "",
+                "default": [
+                    "",
+                    "",
+                    ""
+                ]
+            },
             "on-click": "pavucontrol",
             "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+        },
+        "custom/mediaplayer": {
+            "format": "{0} {1}",
+            "return-type": "json",
+            "max-length": 60,
+            "on-click": "playerctl play-pause",
+            "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+            "smooth-scrolling-threshold": 1,
+            "on-scroll-up": "playerctl next",
+            "on-scroll-down": "playerctl previous",
+            "escape": true,
+            "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"
+        },
+        "custom/weather": {
+            "exec": "${HOME}/.config/waybar/scripts/weather/get_weather.sh Lake+Forest",
+            "return-type": "json",
+            "format": "{}",
+            "tooltip": true,
+            "interval": 3600
+        },
+        "custom/grimshot": {
+            "format": "",
+            "tooltip": false,
+            "on-click": "grimshot --notify save output - | swappy -f -",
+            "on-click-middle": "grimshot --notify save area - | swappy -f -",
+            "on-click-right": "grimshot --notify save window - | swappy -f -"
+        },
+        "custom/wfrecord": {
+            "format": "",
+            "tooltip": false,
+            "interval": "once",
+            "return-type": "json",
+            "exec": "~/.config/waybar/scripts/record/wfrecord-monitor.sh",
+            "on-click": "~/.config/waybar/scripts/record/wfrecord-record.sh",
+            "on-click-right": "~/.config/waybar/scripts/record/wfrecord-stop.sh",
+            "signal": 8
+        },
+        "custom/vm": {
+            "format": "  ",
+            "interval": 10,
+            "return-type": "json",
+            "exec": "~/.config/waybar/scripts/workspace/kvm-monitor.sh",
+            "on-click": "~/.config/waybar/scripts/workspace/kvm.sh"
+        },
+        "custom/containers": {
+            "format": "󰡨  ",
+            "interval": 10,
+            "return-type": "json",
+            "exec": "~/.config/waybar/scripts/workspace/containers-monitor.sh"
+        },
+        "systemd-failed-units": {
+            "hide-on-ok": false,
+            "format": "✗ {nr_failed}",
+            "format-ok": "",
+            "system": true,
+            "user": false,
+            "on-click": "systemadm"
+        },
+        "temperature": {
+            "critical-threshold": 80,
+            "format": "{temperatureF}°F {icon}",
+            "format-icons": [
+                "",
+                "",
+                ""
+            ]
+        },
+        "battery": {
+            "states": {
+                "warning": 30,
+                "critical": 15
             },
-            "pulseaudio": {
-                "scroll-step": 2,
-                "format": "{volume}% {icon} {format_source}",
-                "format-bluetooth": "{volume}% {icon} {format_source}",
-                "format-bluetooth-muted": " {icon} {format_source}",
-                "format-muted": " {format_source}",
-                "format-source": "{volume}% ",
-                "format-source-muted": "",
-                "format-icons": {
-                    "headphone": "",
-                    "hands-free": "󰙌",
-                    "headset": "󰋎",
-                    "phone": "",
-                    "portable": "",
-                    "car": "",
-                    "default": [
-                        "",
-                        "",
-                        ""
-                    ]
-                },
-                "on-click": "pavucontrol",
-                "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+            "format": "{icon} {capacity}%",
+            "format-icons": [
+                "",
+                "",
+                "",
+                "",
+                ""
+            ]
+        },
+        "cpu": {
+            "interval": 5,
+            "format": "{usage:>3}%",
+            "states": {
+                "warning": 70,
+                "critical": 90
             },
-            "custom/mediaplayer": {
-                "format": "{0} {1}",
-                "return-type": "json",
-                "max-length": 60,
-                "on-click": "playerctl play-pause",
-                "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-                "smooth-scrolling-threshold": 1,
-                "on-scroll-up": "playerctl next",
-                "on-scroll-down": "playerctl previous",
-                "escape": true,
-                "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"
-            },
-            "custom/weather": {
-                "exec": "${HOME}/.config/waybar/scripts/weather/get_weather.sh Lake+Forest",
-                "return-type": "json",
-                "format": "{}",
-                "tooltip": true,
-                "interval": 3600
-            },
-            "custom/grimshot": {
-                "format": "",
-                "tooltip": false,
-                "on-click": "grimshot --notify save output - | swappy -f -",
-                "on-click-middle": "grimshot --notify save area - | swappy -f -",
-                "on-click-right": "grimshot --notify save window - | swappy -f -"
-            },
-            "custom/wfrecord": {
-                "format": "",
-                "tooltip": false,
-                "interval": "once",
-                "return-type": "json",
-                "exec": "~/.config/waybar/scripts/record/wfrecord-monitor.sh",
-                "on-click": "~/.config/waybar/scripts/record/wfrecord-record.sh",
-                "on-click-right": "~/.config/waybar/scripts/record/wfrecord-stop.sh",
-                "signal": 8
-            },
-            "custom/vm": {
-                "format": "  ",
-                "interval": 10,
-                "return-type": "json",
-                "exec": "~/.config/waybar/scripts/workspace/kvm-monitor.sh",
-                "on-click": "~/.config/waybar/scripts/workspace/kvm.sh"
-            },
-            "custom/containers": {
-                "format": "󰡨  ",
-                "interval": 10,
-                "return-type": "json",
-                "exec": "~/.config/waybar/scripts/workspace/containers-monitor.sh"
-            },
-            "systemd-failed-units": {
-                "hide-on-ok": false,
-                "format": "✗ {nr_failed}",
-                "format-ok": "",
-                "system": true,
-                "user": false,
-                "on-click": "systemadm"
-            },
-            "temperature": {
-                "critical-threshold": 80,
-                "format": "{temperatureF}°F {icon}",
-                "format-icons": [
-                    "",
-                    "",
-                    ""
-                ]
-            },
-            "battery": {
-                "states": {
-                    "warning": 30,
-                    "critical": 15
-                },
-                "format": "{icon} {capacity}%",
-                "format-icons": [
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
-                ]
-            },
-            "cpu": {
-                "interval": 5,
-                "format": "{usage:>3}%",
-                "states": {
-                    "warning": 70,
-                    "critical": 90
-                },
-                "on-click": "footclient -T waybar_htop -e htop"
-            },
-            "memory": {
-                "interval": 5,
-                "format": "{:>3}%",
-                "on-click": "footclient -T waybar_htop -e htop",
-                "states": {
-                    "warning": 70,
-                    "critical": 90
-                }
-            },
-            "disk": {
-                "interval": 30,
-                "format": "{free} GB/{total} GB",
-                "path": "/"
-            },
-            "network": {
-                "format-disabled": " Disabled",
-                "format-wifi": " {bandwidthDownBits:>} 󰶡 {bandwidthUpBits:>} 󰶣",
-                "tooltip-format-wifi": "{essid}",
-                "format-ethernet": "󰈀 {bandwidthDownBits:>} 󰶡 {bandwidthUpBits:>} 󰶣",
-                "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr}",
-                "format-disconnected": " Disconnected",
-                "on-click": "footclient -T waybar_nmtui -e nmtui",
-                "interval": 2
-            },
-            "custom/keyboard-layout": {
-                "exec": "i=$(swaymsg -t get_inputs); echo \"\"; echo \"$i\" | grep -m1 'xkb_active_layout_name' | cut -d '\"' -f4",
-                "format": "",
-                "interval": 30,
-                "signal": 1,
-                "on-click": "~/.config/waybar/scripts/custom/keyhint.sh"
-            },
-            "keyboard-state": {
-                "numlock": true,
-                "capslock": true,
-                "format": "{name}  {icon} ",
-                "format-icons": {
-                    "locked": "",
-                    "unlocked": ""
-                }
-            },
-            "custom/launcher": {
-                "format": "<span size='x-large'></span>",
-                "on-click": "exec nwg-drawer",
-                "tooltip": false
-            },
-            "sway/workspaces": {
-                "disable-scroll": true,
-                "all-outputs": false,
-                "format": "{icon}",
-                "format-icons": {
-                    "1": " Term",
-                    "2": " SecTerm",
-                    "3": " Term",
-                    "4": " Term",
-                    "5": " Browse",
-                    "6": " Browse",
-                    "7": " Code",
-                    "8": " Git",
-                    "9": " Chat",
-                    "10": " Mail",
-                    "11": " Tasks",
-                    "12": " Files",
-                    "13": " Infra",
-                    "14": " Cloud",
-                    "15": " O365",
-                    "16": " AI",
-                    "17": " Fin",
-                    "18": " Jrnl",
-                    "19": " Rec",
-                    "20": " Media"
-                }
-            },
-            "sway/mode": {
-                "format": "<span style=\"italic\">{}</span>",
-                "tooltip": true
-            },
-            "sway/window": {
-                "format": "{}",
-                "max-length": 120
-            },
-            "idle_inhibitor": {
-                "format": "{icon}",
-                "format-icons": {
-                    "activated": "",
-                    "deactivated": ""
-                },
-                "tooltip-format-activated": "Idle Inhibitor Activated",
-                "tooltip-format-deactivated": "Idle Inhibitor Deactivated"
-            },
-            "backlight": {
-                "format": "{icon} {percent}%",
-                "format-icons": [
-                    "󰄰",
-                    "󰪞",
-                    "󰪟",
-                    "󰪠",
-                    "󰪡",
-                    "󰪢",
-                    "󰪣",
-                    "󰪤",
-                    "󰪥"
-                ],
-                "tooltip-format": "Backlight (Scroll): {percent:}%",
-                "on-scroll-down": "brightnessctl -c backlight set 5%-",
-                "on-scroll-up": "brightnessctl -c backlight set +5%"
-            },
-            "power-profiles-daemon": {
-                "format": "{icon}",
-                "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-                "tooltip": true,
-                "format-icons": {
-                    "default": "",
-                    "performance": "",
-                    "balanced": "",
-                    "power-saver": ""
-                }
-            },
-            "clock": {
-                "format": "󰅐 {:%H:%M}",
-                "format-alt": "󰅐 {:%OI:%M %p}",
-                "tooltip-format": " {:%A %m/%d}\n\n<tt><small>{calendar}</small></tt>",
-                "on-click-right": "/usr/bin/evolution --component=calendar",
-                "calendar": {
-                    "on-scroll": 1,
-                    "format": {
-                        "months": "<span color='#ffead3'><b>{}</b></span>",
-                        "days": "<span color='#ecc6d9'><b>{}</b></span>",
-                        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
-                        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-                        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
-                    }
-                },
-                "actions": {
-                    "on-scroll-up": "shift_up",
-                    "on-scroll-down": "shift_down"
-                }
-            },
-            "custom/power": {
-                "format": "⏻",
-                "on-click": "~/.config/waybar/scripts/power/power_menu.sh",
-                "tooltip": false
-            },
-            "custom/notification": {
-                "tooltip": false,
-                "format": "{} {icon}",
-                "format-icons": {
-                    "notification": "<span foreground='red'><sup></sup></span>",
-                    "none": "",
-                    "dnd-notification": "<span foreground='red'><sup></sup></span>",
-                    "dnd-none": "",
-                    "inhibited-notification": "<span foreground='red'><sup></sup></span>",
-                    "inhibited-none": "",
-                    "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-                    "dnd-inhibited-none": ""
-                },
-                "return-type": "json",
-                "exec-if": "which swaync-client",
-                "exec": "swaync-client -swb",
-                "on-click": "swaync-client -t -sw",
-                "on-click-right": "swaync-client -d -sw",
-                "escape": true
+            "on-click": "footclient -T waybar_htop -e htop"
+        },
+        "memory": {
+            "interval": 5,
+            "format": "{:>3}%",
+            "on-click": "footclient -T waybar_htop -e htop",
+            "states": {
+                "warning": 70,
+                "critical": 90
             }
+        },
+        "disk": {
+            "interval": 30,
+            "format": "{free} GB/{total} GB",
+            "path": "/"
+        },
+        "network": {
+            "format-disabled": " Disabled",
+            "format-wifi": " {bandwidthDownBits:>} 󰶡 {bandwidthUpBits:>} 󰶣",
+            "tooltip-format-wifi": "{essid}",
+            "format-ethernet": "󰈀 {bandwidthDownBits:>} 󰶡 {bandwidthUpBits:>} 󰶣",
+            "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr}",
+            "format-disconnected": " Disconnected",
+            "on-click": "footclient -T waybar_nmtui -e nmtui",
+            "interval": 2
+        },
+        "custom/keyboard-layout": {
+            "exec": "i=$(swaymsg -t get_inputs); echo \"\"; echo \"$i\" | grep -m1 'xkb_active_layout_name' | cut -d '\"' -f4",
+            "format": "",
+            "interval": 30,
+            "signal": 1,
+            "on-click": "~/.config/waybar/scripts/custom/keyhint.sh"
+        },
+        "keyboard-state": {
+            "numlock": true,
+            "capslock": true,
+            "format": "{name}  {icon} ",
+            "format-icons": {
+                "locked": "",
+                "unlocked": ""
+            }
+        },
+        "custom/launcher": {
+            "format": "<span size='x-large'></span>",
+            "on-click": "exec nwg-drawer",
+            "tooltip": false
+        },
+        "sway/workspaces": {
+            "disable-scroll": true,
+            "all-outputs": false,
+            "format": "{icon}",
+            "format-icons": {
+                "1": " Term",
+                "2": " SecTerm",
+                "3": " Term",
+                "4": " Term",
+                "5": " Browse",
+                "6": " Browse",
+                "7": " Code",
+                "8": " Git",
+                "9": " Chat",
+                "10": " Mail",
+                "11": " Tasks",
+                "12": " Files",
+                "13": " Infra",
+                "14": " Cloud",
+                "15": " O365",
+                "16": " AI",
+                "17": " Fin",
+                "18": " Jrnl",
+                "19": " Rec",
+                "20": " Media"
+            }
+        },
+        "sway/mode": {
+            "format": "<span style=\"italic\">{}</span>",
+            "tooltip": true
+        },
+        "sway/window": {
+            "format": "{}",
+            "max-length": 120
+        },
+        "idle_inhibitor": {
+            "format": "{icon}",
+            "format-icons": {
+                "activated": "",
+                "deactivated": ""
+            },
+            "tooltip-format-activated": "Idle Inhibitor Activated",
+            "tooltip-format-deactivated": "Idle Inhibitor Deactivated"
+        },
+        "backlight": {
+            "format": "{icon} {percent}%",
+            "format-icons": [
+                "󰄰",
+                "󰪞",
+                "󰪟",
+                "󰪠",
+                "󰪡",
+                "󰪢",
+                "󰪣",
+                "󰪤",
+                "󰪥"
+            ],
+            "tooltip-format": "Backlight (Scroll): {percent:}%",
+            "on-scroll-down": "brightnessctl -c backlight set 5%-",
+            "on-scroll-up": "brightnessctl -c backlight set +5%"
+        },
+        "power-profiles-daemon": {
+            "format": "{icon}",
+            "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+            "tooltip": true,
+            "format-icons": {
+                "default": "",
+                "performance": "",
+                "balanced": "",
+                "power-saver": ""
+            }
+        },
+        "clock": {
+            "format": "󰅐 {:%H:%M}",
+            "format-alt": "󰅐 {:%OI:%M %p}",
+            "tooltip-format": " {:%A %m/%d}\n\n<tt><small>{calendar}</small></tt>",
+            "on-click-right": "/usr/bin/evolution --component=calendar",
+            "calendar": {
+                "on-scroll": 1,
+                "format": {
+                    "months": "<span color='#ffead3'><b>{}</b></span>",
+                    "days": "<span color='#ecc6d9'><b>{}</b></span>",
+                    "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+                    "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                    "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+                }
+            },
+            "actions": {
+                "on-scroll-up": "shift_up",
+                "on-scroll-down": "shift_down"
+            }
+        },
+        "custom/power": {
+            "format": "⏻",
+            "on-click": "~/.config/waybar/scripts/power/power_menu.sh",
+            "tooltip": false
+        },
+        "custom/notification": {
+            "tooltip": false,
+            "format": "{} {icon}",
+            "format-icons": {
+                "notification": "<span foreground='red'><sup></sup></span>",
+                "none": "",
+                "dnd-notification": "<span foreground='red'><sup></sup></span>",
+                "dnd-none": "",
+                "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+                "inhibited-none": "",
+                "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+                "dnd-inhibited-none": ""
+            },
+            "return-type": "json",
+            "exec-if": "which swaync-client",
+            "exec": "swaync-client -swb",
+            "on-click": "swaync-client -t -sw",
+            "on-click-right": "swaync-client -d -sw",
+            "escape": true
+        }
     }
 ]
