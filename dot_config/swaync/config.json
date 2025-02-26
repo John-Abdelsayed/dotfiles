@@ -1,0 +1,141 @@
+{
+  "positionX": "right",
+  "positionY": "top",
+  "timeout": 10,
+  "timeout-low": 5,
+  "timeout-critical": 0,
+  "control-center-width": 500,
+  "notification-window-width": 500,
+  "keyboard-shortcuts": true,
+  "image-visibility": "always",
+  "transition-time": 200,
+  "hide-on-clear": true,
+  "hide-on-action": true,
+  "control-center-margin-top": 0,
+  "control-center-margin-bottom": 0,
+  "control-center-margin-right": 0,
+  "control-center-margin-left": 0,
+  "$schema": "/etc/xdg/swaync/configSchema.json",
+  "layer": "overlay",
+  "control-center-layer": "top",
+  "layer-shell": true,
+  "cssPriority": "application",
+  "notification-2fa-action": true,
+  "notification-inline-replies": true,
+  "notification-icon-size": 64,
+  "notification-body-image-height": 100,
+  "notification-body-image-width": 200,
+  "fit-to-screen": true,
+  "relative-timestamps": true,
+  "control-center-height": 600,
+  "script-fail-notify": true,
+  "scripts": {
+    "example-script": {
+      "exec": "echo 'Do something actionable!'",
+      "urgency": "Normal"
+    },
+    "example-action-script": {
+      "exec": "fortune | cowsay | lolcat",
+      "urgency": "Normal",
+      "run-on": "action"
+    }
+  },
+  "notification-visibility": {
+    "example-name": {
+      "state": "muted",
+      "urgency": "Low",
+      "app-name": "Spotify"
+    }
+  },
+  "widgets": [
+    "inhibitors",
+    "title",
+    "dnd",
+    "mpris",
+    "notifications",
+    "buttons-grid",
+    "volume"
+  ],
+  "widget-config": {
+    "inhibitors": {
+      "text": "Inhibitors",
+      "button-text": "Clear All",
+      "clear-all-button": true
+    },
+    "title": {
+      "text": "Notifications",
+      "clear-all-button": true,
+      "button-text": "Clear All"
+    },
+    "dnd": {
+      "text": "I am not to be disturbed"
+    },
+    "label": {
+      "max-lines": 5,
+      "text": "Label Text"
+    },
+    "mpris": {
+      "image-size": 96,
+      "image-radius": 5
+    },
+    "volume": {
+      "label": "󰕾"
+    },
+    "backlight": {
+      "label": "󰃟"
+    },
+    "buttons-grid": {
+            "actions": [
+                {
+                    "label": "󰂯  Bluetooth",
+                    "command": "blueman-manager"
+                },
+                {
+                    "label": " - Wireless",
+                    "command": "nm-connection-editor"
+                },
+                {
+                    "label": "󰱯  Phone",
+                    "command": "scrcpy --tcpip=172.16.9.132:5555"
+                },
+                {
+                    "label": "󰕾  Mute",
+                    "command": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+                },
+                {
+                    "label": "󰍬  Mute Mic",
+                    "command": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+                    "type": "toggle"
+                },
+                {
+                    "label": "󰝚  Start Player",
+                    "command": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"
+                },
+                {
+                    "label": "󰑓  Reload Waybar",
+                    "command": "killall -SIGUSR2 waybar"
+                },
+                {
+                    "label": "󱄋  Reload SwayNC",
+                    "command": "swaync-client -R"
+                },
+                {
+                    "label": "󰩈  Exit Sway",
+                    "command": "swaymsg exit"
+                },
+                {
+                    "label": "󰐥  Power Off",
+                    "command": "systemctl poweroff"
+                },
+                {
+                    "label": "󰜉  Reboot",
+                    "command": "systemctl reboot"
+                },
+                {
+                    "label": "󰎟  Close All",
+                    "command": "swaync-client -C"
+                }
+            ]
+        }
+  }
+}
