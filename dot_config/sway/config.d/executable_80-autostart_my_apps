@@ -55,7 +55,7 @@ exec_always unclutter --start-hidden
 # exec caffeine start
 
 # Set up daytime/nightime lighting
-exec wlsunset -t 4500 -T 6500 -l -1 -L -1 -g 1.0
+exec wlsunset -t 4000 -T 6500 -l 42.26 -L 87.84 -g 1.0
 
 # Set up autotiling (Experimental)
 exec_always nwg-autotiling
