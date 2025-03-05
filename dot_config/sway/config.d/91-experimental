@@ -3,6 +3,48 @@
 ########################################
 
 ####################
+# Display
+####################
+
+# Start a script to setup single laptop display
+# exec ~/.screenlayout/monitor.sh
+
+# Set powersavings for display:
+# exec xset s 480 dpms 600 600 600
+
+# Start cafeeine
+# exec caffeine start
+
+# Autotiling
+# exec autotiling
+
+# Execute nwg-panel
+# exec_always nwg-panel -c ~/.config/nwg-panel/config -s preset-0.css
+
+####################
+# Desktop & Wallpaper
+####################
+
+# Set up transparency
+# exec xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55 &
+#exec picom -cb
+
+# Desktop notification daemons
+# exec dbus-launch dunst --config ~/.config/dunst/dunstrc
+# exec mako
+# exec zenity
+
+# Set wallpaper
+#exec nitrogen --random --restore
+#exec feh --recursive --bg-fill --randomize /usr/share/endeavouros/backgrounds/endeavouros_sway.png
+
+######################################
+# Sway Fader
+######################################
+
+#exec python3 ~/.config/sway/scripts/swayfader.py
+
+####################
 # NWG
 ####################
 
@@ -14,6 +56,79 @@
 
 # Execute nwg-shell-help
 bindsym $mod+F1           exec nwg-shell-help
+
+######################################
+# Update Indicator                   #
+######################################
+
+exec nwg-update-indicator
+
+######################################
+# Terminals                          #
+######################################
+
+# Yakuake
+#exec sleep 2 && yakuake
+
+# XFCE Terminal
+#exec sleep 2 && xfce4-terminal
+
+########################################
+# Phone and Other Devices              #
+########################################
+
+# Start scrcpy
+# Samsung Galaxy Note 9
+# (usb)  29945745161c7ece                device  SM_N960U1
+# Device: [samsung] samsung SM-N960U1 (Android 10)
+exec sleep 30 && scrcpy --tcpip --no-audio --stay-awake  --window-width=9 --window-height=16 --window-borderless --legacy-paste
+
+# Start localsend
+exec sleep 30 && localsend --hidden
+
+# Start KDEConnect and connect to Excelsior
+#exec sleep 15 && kdeconnect-cli -n Excelsior
+
+# Start KDE Connect Indicator
+#exec sleep 15 && kdeconnect-indicator
+
+########################################
+# Gaming                               #
+########################################
+
+# Start Steam
+# exec sleep 90 && steam
+
+# Start Heroic
+# exec sleep 90 && heroic
+
+# Start Chiaki
+#exec sleep 90 && chiaki
+
+# Start ES-DE
+#exec sleep 90 && es-de
+
+########################################
+# Art and Music                        #
+########################################
+
+# Start Gimp
+# exec sleep 120 && gimp
+
+# Start Inkscape
+# exec sleep 120 && inkscape
+
+# Start OpenToonz
+# exec sleep 120 && opentoonz
+
+# Start Ardour
+# exec sleep 120 && ardour8-new_empty_session
+
+# Start Blender
+# exec sleep 120 && blender
+
+# Start MuseScore
+# exec sleep 120 && mscore
 
 ####################
 # Alternative Window Bindings
