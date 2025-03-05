@@ -10,7 +10,6 @@
 # Idle configuration
 ####################
 
-exec swayidle idlehint 1
 exec_always swayidle -w before-sleep "$lock"
 
 ####################
