@@ -31,8 +31,6 @@ exec sleep 40 && firefoxpwa site launch 01J99GQHAK49961EKBP6ZKXQKK
 # DTIG Cloud Apps                      #
 ########################################
 
-# Start DTIG OPNSense
-exec sleep 50 && firefoxpwa site launch 01J4NK309P295D8HMYH0J5Y07K
 # Start DTIG Azure
 exec sleep 50 && firefoxpwa site launch 01J7BY3T600KJFZN49YE1BWTSN
 # Start DTIG ADO
