@@ -130,6 +130,17 @@ exec sleep 30 && localsend --hidden
 # Start MuseScore
 # exec sleep 120 && mscore
 
+########################################
+# Systems                              #
+########################################
+
+# Start DBeaver
+#exec sleep 30 && dbeaver
+
+# Start Virt-Manager
+#exec sleep 30 && virt-manager
+
+
 ####################
 # Alternative Window Bindings
 ####################

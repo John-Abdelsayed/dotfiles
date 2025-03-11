@@ -204,12 +204,5 @@ exec sleep 50 && strawberry
 # Start vlc
 exec sleep 40 && vlc
 
-########################################
-# Systems                              #
-########################################
-
-# Start DBeaver
-exec sleep 30 && dbeaver
-
-# Start Virt-Manager
-exec sleep 30 && virt-manager
+# Start SMPlayer
+exec sleep 40 && smplayer
