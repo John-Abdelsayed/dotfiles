@@ -81,7 +81,7 @@ assign [app_id="LibreWolf"] $ws6
 # VSCodium
 assign [class="(?i)vscodium"] $ws7
 # Emacs
-assign [class="(?i)Emacs"] $ws7
+assign [class="(?i)Emacs"] $ws8
 # Yaade
 assign [app_id="FFPWA-01J4MB56YS9XN8FKG4PQG2Y74X"] $ws8
 # GitHub Desktop
@@ -171,7 +171,7 @@ assign [app_id="homebank"] $ws17
 assign [app_id="Portfolio Performance"] $ws17
 # Xero
 assign [app_id="FFPWA-01H8HBEQRHJXVWDV7CY6XAZ8AW"] $ws17
-# QBO 
+# QBO
 assign [app_id="FFPWA-01GZ1M1VY13T291BVVV5TSGE4Z"] $ws17
 # Chase
 assign [app_id="FFPWA-01H960MR2RSEP4QVPCH0BX2X47"] $ws17

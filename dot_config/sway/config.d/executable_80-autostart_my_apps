@@ -123,7 +123,7 @@ exec sleep 15 && librewolf
 ########################################
 
 # Start ollama
-exec sleep 30 && ollama serve
+exec sleep 20 && ollama serve
 
 # Start Alpaca
 exec sleep 30 && alpaca
