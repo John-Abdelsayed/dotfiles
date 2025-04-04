@@ -76,7 +76,6 @@ plugins=(
   alias-finder
   archlinux
   ansible
-  autoenv
   azure
   chezmoi
   colored-man-pages
