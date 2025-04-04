@@ -1,0 +1,25 @@
+# Displays
+#export WAYLAND_DISPLAY=wayland-1
+#export DISPLAY=$WAYLAND_DISPLAY
+
+# Xserver
+#export XCURSOR_THEME=Adwaita
+#export XCURSOR_SIZE=32
+
+# GDK
+#export GDK_BACKEND=x11
+
+# XDG
+#export XDG_CURRENT_DESKTOP=sway
+#export XDG_SESSION_DESKTOP=sway
+#export XDG_SESSION_TYPE=wayland
+
+# CLUTTER
+#export CLUTTER_BACKEND=wayland
+
+# QT
+#export QT_QPA_PLATFORM=wayland
+#export QT_QPA_PLATFORMTHEME=qt5ct
+#export QT_PLATFORMTHEME=qt5ct
+#export QT_PLATFORM_PLUGIN=qt5ct
+#export QT_STYLE_OVERRIDE=kvantum
