@@ -1,7 +1,7 @@
+# Import source profile
+[[ -f ~/.profile ]] && . ~/.profile
+
+# Launch
 if [ -z "$WAYLAND_DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ] ; then
     exec sway
 fi
-
-# Source profile
-[[ -f ~/.profile ]] && . ~/.profile
-source ~/.autoenv/activate.sh
