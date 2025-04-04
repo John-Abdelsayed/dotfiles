@@ -1,3 +1,8 @@
+## App Souring
+# broot
+source /home/b0nz1cu5/.config/broot/launcher/bash/br
+
+## 
 # Displays
 export WAYLAND_DISPLAY=wayland-1
 export DISPLAY=$WAYLAND_DISPLAY
