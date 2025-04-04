@@ -289,9 +289,6 @@ POWERLEVEL9K_INSTANT_PROMPT=off
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-source /home/b0nz1cu5/.config/broot/launcher/bash/br
-
-
 #####################################
 ### Alias-Finder
 #####################################
