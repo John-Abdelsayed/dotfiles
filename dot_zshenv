@@ -1,2 +1,4 @@
 # Source profile
 [[ -f ~/.profile ]] && . ~/.profile
+
+GDK_BACKEND=x11
