@@ -118,6 +118,12 @@ assign [class="(?i)ao"] $ws11
 assign [class="(?i)kuro"] $ws11
 # To-Do
 assign [app_id="FFPWA-01J5NM5W9PRMV62DEJJQBGHR17"] $ws11
+# Super Productivity
+assign [app_id="Super Productivity"] $ws11
+# Joplin
+assign [app_id="joplin"] $ws11
+# Sleek
+assign [app_id="sleek"] $ws11
 
 
 ########## File Explorer ##########
