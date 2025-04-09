@@ -130,7 +130,7 @@ assign [class="(?i)superProductivity"] $ws11
 # Joplin
 assign [app_id="joplin"] $ws11
 # Sleek
-assign [app_id="sleek"] $ws11
+assign [class="(?i)sleek"] $ws11
 
 
 ########## File Explorer ##########
@@ -171,6 +171,7 @@ assign [app_id="libreoffice-calc"] $ws14
 assign [app_id="libreoffice-impress"] $ws14
 # LibreOffice Math
 assign [app_id="libreoffice-math"] $ws14
+
 
 ########## O365 ##########
 # Azure

@@ -119,6 +119,16 @@ exec sleep 15 && firefox
 exec sleep 15 && librewolf
 
 ########################################
+#  Tasks                               #
+########################################
+
+# Start Super Productivity
+exec sleep 20 && superproductivity
+
+# Start Sleek
+exec sleep 20 && sleek
+
+########################################
 #  Artificial Intelligence (AI)        #
 ########################################
 
@@ -177,7 +187,7 @@ exec sleep 30 && homebank
 
 # Start Portfolio
 exec sleep 30 && portfolio
-
+app_id=
 ########################################
 # Phone and Other Devices              #
 ########################################
