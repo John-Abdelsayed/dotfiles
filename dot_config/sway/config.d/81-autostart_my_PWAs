@@ -14,7 +14,7 @@
 ######################################
 
 # OPNSense
-exec sleep 40 && firefoxpwa site launch 01J4NK309P295D8HMYH0J5Y07K
+# exec sleep 40 && firefoxpwa site launch 01J4NK309P295D8HMYH0J5Y07K
 # Portainer
 exec sleep 40 && firefoxpwa site launch 01J4MB4EFNN3S8JX1XDQ0JKBYC
 # DNS 1
@@ -32,15 +32,15 @@ exec sleep 40 && firefoxpwa site launch 01J99GQHAK49961EKBP6ZKXQKK
 ########################################
 
 # Start DTIG Azure
-exec sleep 50 && firefoxpwa site launch 01J7BY3T600KJFZN49YE1BWTSN
+# exec sleep 50 && firefoxpwa site launch 01J7BY3T600KJFZN49YE1BWTSN
 # Start DTIG ADO
-exec sleep 50 && firefoxpwa site launch 01J7BY8P960F6KGBK05ZDWQ40B
+# exec sleep 50 && firefoxpwa site launch 01J7BY8P960F6KGBK05ZDWQ40B
 # Start DTIG Synology
 exec sleep 50 && firefoxpwa site launch 01J3N5Q88YHY7J4D6B8PM27P85
 # Start DTIG To-Do
-exec sleep 50 && firefoxpwa site launch 01J5NM5W9PRMV62DEJJQBGHR17
+# exec sleep 50 && firefoxpwa site launch 01J5NM5W9PRMV62DEJJQBGHR17
 # Start DTIG IT Tools
-exec sleep 50 && firefoxpwa site launch 01J4MB3VG5W7XP15VEKTN13BBQ
+# exec sleep 50 && firefoxpwa site launch 01J4MB3VG5W7XP15VEKTN13BBQ
 
 
 ########################################
