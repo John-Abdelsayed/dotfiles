@@ -60,19 +60,24 @@ output "DP-3" {
 ########################################
 
 ########## Terminals  ##########
-
+# XFCE Terminal
+assign [app_id="xfce4-terminal"] $ws1
+#Tilix
 assign [app_id="tilix"] $ws3
 
 
 ########## Security ##########
+# Bitwarden
 assign [class="(?i)Bitwarden"] $ws2
+# KeePassXC
+assign [app_id="KeePassXC"] $ws2
 
 
 ########## Browsers ##########
+# Chromium
+assign [class="(?i)Chromium"] $ws4
 # Firefox
 assign [app_id="firefox"] $ws5
-# Chromium
-assign [class="(?i)Chromium"] $ws6
 # Librewolf
 assign [app_id="LibreWolf"] $ws6
 
@@ -92,6 +97,7 @@ assign [app_id="FFPWA-01J4MCFGNV9PRWNN7F9B7AX45A"] $ws8
 assign [app_id="FFPWA-01J48SZ63W0CB8CEDYDWV683GK"] $ws8
 # IT Tools
 assign [app_id="FFPWA-01J4MB3VG5W7XP15VEKTN13BBQ"] $ws8
+
 
 ########## Chat ##########
 # MS Teams
@@ -120,6 +126,7 @@ assign [class="(?i)kuro"] $ws11
 assign [app_id="FFPWA-01J5NM5W9PRMV62DEJJQBGHR17"] $ws11
 # Super Productivity
 assign [app_id="Super Productivity"] $ws11
+assign [class="(?i)superProductivity"] $ws11
 # Joplin
 assign [app_id="joplin"] $ws11
 # Sleek
@@ -131,11 +138,14 @@ assign [app_id="sleek"] $ws11
 assign [app_id="org.gnome.Nautilus"] $ws12
 # Thunar
 assign [app_id="thunar"] $ws12
+# Qbittorrent
+assign [class="(?i)qbittorrent"] $ws12
+# FileZilla
+assign [app_id="FileZilla"] $ws12
 # Synology DSM
 assign [app_id="FFPWA-01J3N5Q88YHY7J4D6B8PM27P85"] $ws12
 # Paperless
 assign [app_id="FFPWA-01J85ZGQNW5110KGPP261H3254"] $ws12
-
 
 ########## Infrastructure ##########
 # OPNSense
@@ -151,6 +161,16 @@ assign [app_id="FFPWA-01J4MB2HKQPR64QQRCSBVKJZAD"] $ws13
 # NXRP
 assign [app_id="FFPWA-01J99GQHAK49961EKBP6ZKXQKK"] $ws13
 
+
+########## Office ##########
+# LibreOffice Writer
+assign [app_id="libreoffice-writer"] $ws14
+# LibreOffice Calc
+assign [app_id="libreoffice-calc"] $ws14
+# LibreOffice Impress
+assign [app_id="libreoffice-impress"] $ws14
+# LibreOffice Math
+assign [app_id="libreoffice-math"] $ws14
 
 ########## O365 ##########
 # Azure
@@ -192,65 +212,80 @@ assign [class="(?i)obsidian"] $ws18
 assign [class="(?i)zotero"] $ws18
 
 
-########## Media and Gaming ##########
+############## Gaming ###############
 # Steam
-assign [class="steam"] $ws19
-# Qbittorrent
-assign [class="(?i)qbittorrent"] $ws19
-# Spotify
-assign [class="(?i)Spotify"] $ws19
-# Strawberry
-assign [class="(?i)strawberry"] $ws19
+assign [class="(?i)steam"] $ws19
+# Heroic
+assign [class="(?i)heroic"] $ws19
+
+
+############## Media  ###############
 # Vlc
 assign [class="(?i)vlc"] $ws20
 # Netflix
 assign [app_id="FFPWA-01JCSK69G2GM70FNAPA4DS5M0X"] $ws20
 # SMPlayer
 assign [app_id="SMPlayer"] $ws20
+# Spotify
+assign [class="(?i)Spotify"] $ws20
+# Strawberry
+assign [class="(?i)strawberry"] $ws20
 
-######### Phone and Android ###########
 
+######### Phone ###################
 # scrcpy
-assign [instance="(?i)scrcpy" class="(?i)scrcpy"] $ws21
+assign [class="(?i)scrcpy"] $ws21
 assign [title="SM-N960U1"] $ws21
 
+
+########### Android ##############
 # Android Studio
 assign [class="(?i)jetbrains-studio"] $ws22
-###########################
 
-######### Music ###########
 
+########## Music ###########
 # MuseScore
-assign [class="MuseScore4"] $ws23
-
+assign [class="(?i)MuseScore4"] $ws23
 # Ardour
-assign [class="Ardour"] $ws24
+assign [class="(?i)Ardour"] $ws23
 
-###########################
 
-######### Drawing and Animating #########
-
+######### Drawing  #########
 # Inkscape
 assign [app_id="org.inkscape.Inkscape"] $ws25
-
-#LibreDraw
+# LibreDraw
 assign [app_id="libreoffice-draw"] $ws25
+# GIMP
+assign [app_id="gimp-3.0"] $ws25
 
+
+######### Animation #########
 # OpenToonz
 assign [app_id="OpenToonz"] $ws26
+# Blender
+assign [app_id="blender"] $ws26
 
-###########################
+######### 3-D ##########
+# Bambu Studio
+assign [class="(?i)BambuStudio"] $ws27
+# Ultimaker Cura
+assign [class="(?i)UltiMaker-Cura"] $ws27
+# OpenSCAD
+assign [app_id="org.openscad.OpenSCAD"] $ws27
+
 
 ######### Database ########
-
 # DBeaver
-assign [app_id="DBeaver"] $ws27
+assign [app_id="DBeaver"] $ws28
+# LibreOffice Base
+assign [app_id="libreoffice-base"] $ws28
 
-###########################
 
-######### Remote, VM, Docker ##########
-
+######## Remote  ##########
 # Remote
-assign [ app_id="OpenToonz"] $ws28
+assign [app_id="rustdesk"] $ws29
 
-###########################
+
+######### VM ##############
+# Remote
+assign [class="(?i)VirtualBox Manager"] $ws30
