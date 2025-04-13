@@ -187,7 +187,7 @@ exec sleep 30 && homebank
 
 # Start Portfolio
 exec sleep 30 && portfolio
-app_id=
+
 ########################################
 # Phone and Other Devices              #
 ########################################
