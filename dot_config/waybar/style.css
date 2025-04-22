@@ -421,11 +421,15 @@ window#waybar.hidden {
 
 #custom-cava {
     color: #8FBC8F;
-        border-left: 0px;
-        border-right: 0px;
-        padding-bottom: 6px;
-        font-family: "bargraph";
-        font-size: 22px;
+    border-radius: 10px;
+    border-left: 0px;
+    border-right: 0px;
+    padding-left: 16px;
+    padding-right: 16px;
+    background-color: #383c4a;
+    padding-bottom: 6px;
+    font-family: "bargraph";
+    font-size: 10px;
     }
 
 #idle_inhibitor {
