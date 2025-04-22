@@ -427,7 +427,6 @@ window#waybar.hidden {
     padding-left: 16px;
     padding-right: 16px;
     background-color: #383c4a;
-    padding-bottom: 6px;
     font-family: "bargraph";
     font-size: 10px;
     }
