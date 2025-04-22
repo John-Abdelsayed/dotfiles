@@ -163,6 +163,7 @@
                 "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
             },
             "cava": {
+                "cava_config": "~/.config/cava/config",
                 "framerate": 30,
                 "autosens": 1,
                 "sensitivity": 100,
