@@ -178,7 +178,7 @@
                 "monstercat": false,
                 "waves": false,
                 "noise_reduction": 0.77,
-                "input_delay": 2,
+                "input_delay": 4,
                 "format-icons": [
                     "▁",
                     "▂",
