@@ -427,6 +427,8 @@ window#waybar.hidden {
     padding-left: 16px;
     padding-right: 16px;
     background-color: #383c4a;
+    font-family: "bargraph";
+    font-size: 22px;
     }
 
 #idle_inhibitor {
