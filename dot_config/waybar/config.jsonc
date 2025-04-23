@@ -13,7 +13,7 @@
         ],
         "modules-center": [
             "custom/mediaplayer",
-            "cava"
+            "custom/cava"
         ],
         "modules-right": [
             "custom/weather",
@@ -162,7 +162,7 @@
                 "on-click": "pavucontrol",
                 "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
             },
-            "cava": {
+            "custom/cava": {
                 "cava_config": "~/.config/cava/config",
                 "framerate": 30,
                 "autosens": 1,
