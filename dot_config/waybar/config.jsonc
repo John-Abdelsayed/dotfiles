@@ -8,8 +8,7 @@
         "position": "top",
         "spacing": 10,
         "modules-left": [
-                "tray",
-                "sway/scratchpad"
+                "group/activity"
         ],
         "modules-center": [
             "custom/cava",
@@ -23,6 +22,18 @@
             "group/hardware",
             "wireplumber"
         ],
+                "group/activity": {
+                    "orientation": "inherit",
+                    "drawer": {
+                        "transition-duration": 500,
+                        "children-class": "system",
+                        "transition-left-to-right": true
+                    },
+                    "modules": [
+                        "sway/scratchpad",
+                        "tray"
+                    ]
+                },
                 "group/privgroup": {
                     "orientation": "inherit",
                     "drawer": {
@@ -189,7 +200,7 @@
                     "actions": {
                         "on-click-right": "mode"
                     }
-                },
+            },
             "custom/mediaplayer": {
                 "format": "{0} {1}",
                 "return-type": "json",
