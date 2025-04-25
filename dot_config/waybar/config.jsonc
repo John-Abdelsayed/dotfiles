@@ -434,7 +434,7 @@
                 "on-scroll-up": "brightnessctl -c backlight set +5%"
             },
             "power-profiles-daemon": {
-                "format": "{icon}",
+                "format": "{icon} {profile}",
                 "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
                 "tooltip": true,
                 "format-icons": {
