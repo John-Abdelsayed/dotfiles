@@ -214,7 +214,7 @@
                 "exec": "${HOME}/.config/waybar/mediaplayer.py 2> /dev/null"
             },
             "custom/weather": {
-                "exec": "wttrbar --ampm --custom-indicator "{temp_F} {ICON} {FeelsLikeF}" --date-format "%m/%d" --location 'Lake Forest, IL' --hide-conditions",
+                "exec": "wttrbar --ampm --custom-indicator '{temp_F} {ICON} {FeelsLikeF}' --date-format "%m/%d" --location 'Lake Forest, IL' --hide-conditions",
                 "return-type": "json",
                 "format": "{}",
                 "tooltip": true,
