@@ -7,7 +7,7 @@
 }
 
 #waybar {
-    background: rgba(0, 0, 0, 1.0);
+    background: transparent;
     transition-property: background-color;
     transition-duration: .5s;
     font-family: "Hack Nerd Font Mono Regular", "MesloLGS Nerd Font", "Arial", "Helvetica", "sans-serif";
@@ -15,7 +15,7 @@
 }
 
 #waybar.top {
-    background: rgba(0, 0, 0, 1.0);
+    background: transparent;
     transition-property: background-color;
     transition-duration: .5s;
     font-family: "Hack Nerd Font Mono Regular", "MesloLGS Nerd Font", "Arial", "Helvetica", "sans-serif";
@@ -23,7 +23,7 @@
 }
 
 #waybar.bottom {
-    background: rgba(0, 0, 0, 1.0);
+    background: transparent;
     transition-property: background-color;
     transition-duration: .5s;
     font-family: "Hack Nerd Font Mono Regular", "MesloLGS Nerd Font", "Arial", "Helvetica", "sans-serif";
@@ -38,6 +38,41 @@ window#waybar {
 
 window#waybar.hidden {
     opacity: 0.8;
+}
+
+#custom-launcher,
+#mode,
+#clock,
+#wireplumber,
+#pulseaudio,
+#custom-keyboard-layout,
+#keyboard-state,
+#network,
+#disk,
+#cpu,
+#temperature,
+#backlight,
+#battery,
+#scratchpad,
+#tray,
+#privacy,
+#privacy-item,
+#custom-vm,
+#custom-containers,
+#custom-grimshot,
+#custom-wfrecord,
+#custom-mem,
+#custom-notification,
+#custom-power,
+#custom-weather,
+#power-profiles-daemon,
+#idle_inhibitor {
+    padding-left: 12px;
+    padding-right: 12px;
+    border-radius: 10px;
+    transition: none;
+    color: #ffffff;
+    background: #383c4a;
 }
 
 #workspaces {
@@ -97,40 +132,6 @@ window#waybar.hidden {
     margin-right: 8px;
     padding-right: 16px;
     border-radius: 0px 10px 10px 0px;
-    transition: none;
-    color: #ffffff;
-    background: #383c4a;
-}
-
-#mode,
-#clock,
-#wireplumber,
-#pulseaudio,
-#custom-keyboard-layout,
-#keyboard-state,
-#network,
-#disk,
-#cpu,
-#temperature,
-#backlight,
-#battery,
-#scratchpad,
-#tray,
-#privacy,
-#privacy-item,
-#custom-vm,
-#custom-containers,
-#custom-grimshot,
-#custom-wfrecord,
-#custom-mem,
-#custom-notification,
-#custom-power,
-#custom-weather,
-#power-profiles-daemon,
-#idle_inhibitor {
-    padding-left: 12px;
-    padding-right: 12px;
-    border-radius: 10px;
     transition: none;
     color: #ffffff;
     background: #383c4a;
@@ -240,13 +241,7 @@ temperature.critical {
     color: #ffffff;
 }
 
-#custom-launcher {
-    padding-left: 12px;
-    padding-right: 12px;
-    margin-right: 15px;
-    border-radius: 10px;
-    background: #383c4a;
-}
+
 
 #custom-mediaplayer {
     background-color: #d0bfff;
