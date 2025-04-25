@@ -87,6 +87,8 @@ window#waybar.hidden {
     transition: none;
     color: #ffffff;
     background: #383c4a;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 #workspaces {
