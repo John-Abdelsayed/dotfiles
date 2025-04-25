@@ -49,8 +49,7 @@ window#waybar.hidden {
     margin-left: 3px;
     margin-right: 3px;
     font-size: 12px;
-    padding-left: 0px;
-    padding-right: 0px;
+    padding: 5px;
 }
 
 #custom-launcher,
