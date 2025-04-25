@@ -40,6 +40,19 @@ window#waybar.hidden {
     opacity: 0.8;
 }
 
+#control,
+#activity,
+#privgroup,
+#system,
+#screenrecord,
+#hardware {
+    margin-left: 3px;
+    margin-right: 3px;
+    font-size: 12px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
 #custom-launcher,
 #mode,
 #clock,
@@ -66,7 +79,9 @@ window#waybar.hidden {
 #custom-power,
 #custom-weather,
 #power-profiles-daemon,
-#idle_inhibitor {
+#idle_inhibitor,
+#language,
+#keyboard-state {
     padding-left: 12px;
     padding-right: 12px;
     border-radius: 10px;
@@ -116,25 +131,8 @@ window#waybar.hidden {
 
 #workspaces button.urgent {
     border-color: #c9545d;
-    color: #c9545d;
-}
-
-#language {
-    padding-left: 8px;
-    padding-right: 8px;
-    border-radius: 10px 0px 0px 10px;
-    transition: none;
-    color: #ffffff;
-    background: #383c4a;
-}
-
-#keyboard-state {
-    margin-right: 8px;
-    padding-right: 16px;
-    border-radius: 0px 10px 10px 0px;
-    transition: none;
-    color: #ffffff;
-    background: #383c4a;
+    color: #000000;
+    border: 2px solid #c9545d;
 }
 
 #wireplumber.muted,
@@ -202,19 +200,6 @@ temperature.critical {
         background-color: #ffffff;
         color: #b32727;
     }
-}
-
-#control,
-#activity,
-#privgroup,
-#system,
-#screenrecord,
-#hardware {
-    margin-left: 3px;
-    margin-right: 3px;
-    font-size: 12px;
-    padding-left: 0px;
-    padding-right: 0px;
 }
 
 #privacy-item.screenshare {
