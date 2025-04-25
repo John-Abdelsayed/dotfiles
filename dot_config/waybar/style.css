@@ -27,7 +27,7 @@
     transition-property: background-color;
     transition-duration: .5s;
     font-family: "Hack Nerd Font Mono Regular", "MesloLGS Nerd Font", "Arial", "Helvetica", "sans-serif";
-
+    min-height: 0;
 }
 
 window#waybar {

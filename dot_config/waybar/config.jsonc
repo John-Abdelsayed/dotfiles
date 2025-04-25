@@ -6,7 +6,7 @@
         "reload_style_on_change": true,
         "height": 30,
         "position": "top",
-        "spacing": 10,
+        "spacing": 6,
         "modules-left": [
                 "group/activity"
         ],
@@ -338,6 +338,7 @@
         "name": "bottom",
         "layer": "top",
         "position": "bottom",
+        "reload_style_on_change": true,
         "height": 30,
         "spacing": 6,
         "modules-left": [
