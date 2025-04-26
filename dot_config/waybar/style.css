@@ -15,7 +15,7 @@
 }
 
 #waybar.top {
-    background: transparent;
+    background: none;
     transition-property: background-color;
     transition-duration: .5s;
     font-family: "Hack Nerd Font Mono Regular", "MesloLGS Nerd Font", "Arial", "Helvetica", "sans-serif";
@@ -184,7 +184,7 @@ temperature.critical {
 #battery.warning:not(.charging) {
     background-color: #ffbe61;
     color: black;
-}
+}padding: 5px;
 
 #battery.critical:not(.charging) {
     background-color: #f53c3c;
@@ -256,7 +256,6 @@ temperature.critical {
     border-radius: 10px;
     border-left: 0px;
     border-right: 0px;
-    padding: 5px;
     background-color: #383c4a;
     font-family: "bargraph";
-    }
+}

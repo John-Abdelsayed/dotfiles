@@ -207,9 +207,10 @@
                 "max-length": 60,
                 "on-click": "playerctl play-pause",
                 "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+                "on-click-middle": "playerctl metadata",
                 "smooth-scrolling-threshold": 1,
-                "on-scroll-up": "playerctl next",
-                "on-scroll-down": "playerctl previous",
+                "on-scroll-up": "playerctld shift",
+                "on-scroll-down": "playerctld unshift",
                 "escape": true,
                 "exec": "${HOME}/.config/waybar/mediaplayer.py 2> /dev/null"
             },
