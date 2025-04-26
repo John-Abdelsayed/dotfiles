@@ -233,7 +233,6 @@ temperature.critical {
     color: black;
     border-radius: 5px;
     margin-right: 5px;
-    padding: 5px;
 }
 
 #custom-mediaplayer.custom-spotify {
@@ -259,5 +258,6 @@ temperature.critical {
     border-right: 0px;
     background-color: #383c4a;
     font-family: "bargraph";
-    padding: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
