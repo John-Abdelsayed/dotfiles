@@ -258,4 +258,5 @@ temperature.critical {
     border-right: 0px;
     background-color: #383c4a;
     font-family: "bargraph";
+    padding: 5px;
 }
