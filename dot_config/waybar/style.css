@@ -233,6 +233,7 @@ temperature.critical {
     color: black;
     border-radius: 5px;
     margin-right: 5px;
+    padding: 5px;
 }
 
 #custom-mediaplayer.custom-spotify {
