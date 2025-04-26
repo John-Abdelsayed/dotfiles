@@ -227,12 +227,9 @@ temperature.critical {
     color: #ffffff;
 }
 
-
-
 #custom-mediaplayer {
     background-color: #d0bfff;
     background-image: linear-gradient(62deg, #c4b4ff 0%, #b15eff 100%);
-    padding: 10px;
     color: black;
     border-radius: 5px;
     margin-right: 5px;
