@@ -133,7 +133,7 @@ window#waybar.hidden {
 #workspaces button.urgent {
     border-color: #c9545d;
     color: #000000;
-    border: 2px solid #c9545d;
+    border: 3px solid #c9545d;
 }
 
 #wireplumber.muted,
