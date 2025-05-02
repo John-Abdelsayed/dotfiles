@@ -2,7 +2,7 @@
     border: none;
     border-radius: 0px;
     font-family: "Hack Nerd Font Mono Regular", "MesloLGS Nerd Font", "Arial", "Helvetica", "sans-serif";
-    font-size: 10px;
+    font-size: 8px;
     min-height: 0;
 }
 
@@ -16,19 +16,17 @@
 }
 
     #waybar.top {
-        background: none;
+        background: transparent;
+        background-color: rgba(0, 0, 0, 0);
         transition-property: background-color;
         transition-duration: .5s;
-        font-family: "Hack Nerd Font Mono Regular", "MesloLGS Nerd Font", "Arial", "Helvetica", "sans-serif";
-        min-height: 0;
     }
 
     #waybar.bottom {
         background: transparent;
+        background-color: rgba(0, 0, 0, 0);
         transition-property: background-color;
         transition-duration: .5s;
-        font-family: "Hack Nerd Font Mono Regular", "MesloLGS Nerd Font", "Arial", "Helvetica", "sans-serif";
-        min-height: 0;
     }
 
     window#waybar {
@@ -60,7 +58,6 @@
 #disk,
 #idle_inhibitor,
 #keyboard-state,
-#keyboard-state,
 #language,
 #memory,
 #mode,
@@ -76,10 +73,6 @@
         background: #383c4a;
         border-radius: 10px;
         color: #ffffff;
-        padding-bottom: 5px;
-        padding-left: 12px;
-        padding-right: 12px;
-        padding-top: 5px;
         transition: none;
 }
 
