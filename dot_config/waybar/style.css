@@ -92,6 +92,7 @@
         border-radius: 10px;
         color: #ffffff;
         transition: none;
+        padding: 5px;
 }
 
 #workspaces {
