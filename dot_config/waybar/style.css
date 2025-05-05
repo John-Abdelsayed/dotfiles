@@ -96,6 +96,10 @@
         padding: 5px;
 }
 
+#custom-launcher {
+    margin-right: 5px;
+}
+
 #workspaces {
     margin-right: 8px;
     border-radius: 10px;
