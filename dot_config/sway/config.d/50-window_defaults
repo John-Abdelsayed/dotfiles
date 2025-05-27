@@ -72,7 +72,7 @@ popup_during_fullscreen smart
 ###################
 
 # Set no border for Chromium/FF
-for_window [app_id="(?i)(?:firefox|chromium|Librewolf)"] border none
+for_window [app_id="(?i)(?:firefox|chromium|LibreWolf)"] border none
 
 # Kill Firefox sharing indicator
 for_window [app_id="firefox" title="Firefox — Sharing Indicator"] kill
