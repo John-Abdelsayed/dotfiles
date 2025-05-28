@@ -34,6 +34,7 @@ for_window [window_type="menu"] floating enable
 
 # By window title
 for_window [title="(?i)Picture in picture"] floating enable, sticky enable, border pixel 1, resize set width 60 ppt height 40 ppt
+for_window [title="(?i)Picture-in-Picture"] floating enable, sticky enable, border pixel 1, resize set width 60 ppt height 40 ppt
 for_window [title="(?i)Picture in Picture"] floating enable, sticky enable, border pixel 1, resize set width 60 ppt height 40 ppt
 for_window [title="Reminders"] floating enable, border pixel 1, resize set width 30 ppt height 20 ppt
 for_window [title="Windows - Soft Keyboard"] floating enable, border pixel 1, resize set width 60 ppt height 40 ppt
