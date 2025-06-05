@@ -83,9 +83,6 @@ exec nwg-update-indicator
 # Device: [samsung] samsung SM-N960U1 (Android 10)
 exec sleep 30 && scrcpy --tcpip --no-audio --stay-awake  --window-width=9 --window-height=16 --window-borderless --legacy-paste
 
-# Start localsend
-exec sleep 30 && localsend --hidden
-
 # Start KDEConnect and connect to Excelsior
 #exec sleep 15 && kdeconnect-cli -n Excelsior
 
