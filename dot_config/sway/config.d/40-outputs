@@ -226,7 +226,7 @@ assign [class="(?i)vlc"] $ws20
 # Netflix
 assign [app_id="FFPWA-01JCSK69G2GM70FNAPA4DS5M0X"] $ws20
 # SMPlayer
-assign [app_id="SMPlayer"] $ws20
+assign [app_id="(?i)SMPlayer"] $ws20
 # Spotify
 assign [class="(?i)Spotify"] $ws20
 # Strawberry
