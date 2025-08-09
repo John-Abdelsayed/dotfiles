@@ -432,8 +432,8 @@
                     "󰪥"
                 ],
                 "tooltip-format": "Backlight (Scroll): {percent:}%",
-                "on-scroll-down": "brightnessctl -c backlight set 5%-",
-                "on-scroll-up": "brightnessctl -c backlight set +5%"
+                "on-scroll-down": "brightnessctl -c backlight set 2%-",
+                "on-scroll-up": "brightnessctl -c backlight set +2%"
             },
             "power-profiles-daemon": {
                 "format": "{icon} {profile}",
