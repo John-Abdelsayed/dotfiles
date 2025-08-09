@@ -1,0 +1,101 @@
+{
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "gitlens.views.lineHistory.location": "explorer",
+    "gitlens.views.compare.location": "explorer",
+    "gitlens.views.search.location": "scm",
+    "git.confirmSync": false,
+    "git.autofetch": true,
+    "gitlens.views.repositories.files.layout": "list",
+    "git.enableSmartCommit": true,
+    "workbench.startupEditor": "newUntitledFile",
+    "mssql.connections": [
+        {
+            "server": "johnabdelsayed.database.windows.net",
+            "database": "JohnsTestDB",
+            "authenticationType": "SqlLogin",
+            "user": "b0nz1cu5",
+            "password": "",
+            "emptyPasswordInput": false,
+            "savePassword": true,
+            "profileName": "Johns Test DB in Azure"
+        }
+    ],
+    "tabnine.experimentalAutoImports": true,
+    "workbench.iconTheme": "vscode-great-icons",
+    "terminal.integrated.shell.linux": "/usr/bin/zsh",
+    "python.languageServer": "Jedi",
+    "editor.fontFamily": "'MesloLGS NF','Fira Code', 'Courier New'",
+    "editor.fontSize": 16,
+    "editor.mouseWheelZoom": true,
+    "terminal.integrated.fontSize": 12,
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "bracketPairColorizer.forceUniqueOpeningColor": true,
+    "vs-kubernetes": {
+        "vs-kubernetes.minikube-path.windows": "C:\\Users\\JohnMarcusAziz\\.vs-kubernetes\\tools\\minikube\\windows-amd64\\minikube.exe",
+        "vs-kubernetes.draft-path.windows": "C:\\Users\\JohnMarcusAziz\\.vs-kubernetes\\tools\\draft\\windows-amd64\\draft.exe",
+        "vs-kubernetes.helm-path.windows": "C:\\Users\\JohnMarcusAziz\\.vs-kubernetes\\tools\\helm\\windows-amd64\\helm.exe",
+        "vs-kubernetes.minikube-path.linux": "/home/b0nz1cu5/.vs-kubernetes/tools/minikube/linux-amd64/minikube",
+        "vs-kubernetes.helm-path.linux": "/home/b0nz1cu5/.vs-kubernetes/tools/helm/linux-amd64/helm",
+        "vs-kubernetes.draft-path.linux": "/home/b0nz1cu5/.vs-kubernetes/tools/draft/linux-amd64/draft",
+        "vscode-kubernetes.minikube-path.windows": "C:\\Users\\JohnMarcusAziz\\.vs-kubernetes\\tools\\minikube\\windows-amd64\\minikube.exe",
+        "vscode-kubernetes.minikube-path.linux": "/home/b0nz1cu5/.vs-kubernetes/tools/minikube/linux-amd64/minikube",
+        "vscode-kubernetes.helm-path-linux": "/home/b0nz1cu5/.local/state/vs-kubernetes/tools/helm/linux-amd64/helm"
+    },
+    "atomKeymap.promptV3Features": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.formatOnPaste": true,
+    "telemetry.enableTelemetry": false,
+    "vsicons.dontShowNewVersionMessage": true,
+    "powershell.powerShellDefaultVersion": "PowerShell (x64)",
+    "terminal.integrated.shell.windows": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "terminal.explorerKind": "external",
+    "yaml.schemas": {
+        "file:///toc.schema.json": "/toc\\.yml/i"
+    },
+    "liveshare.authenticationProvider": "GitHub",
+    "terminal.external.windowsExec": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "azureResourceManagerTools.parameterFiles": {
+        "/home/b0nz1cu5/Development/Azure/ExportedTemplate-DTIG-WWW-PERSONAL(1)/template.json": "parameters.json"
+    },
+    "ai.azureml.experimental: V2Config": false,
+    "terminal.integrated.tabs.enabled": true,
+    "remote.SSH.remotePlatform": {
+        "h1-rasp-dev-ansibletower1": "linux"
+    },
+    "redhat.telemetry.enabled": true,
+    "explorer.confirmDragAndDrop": false,
+    "githubIssues.queries": [
+        {
+            "label": "My Issues",
+            "query": "default"
+        },
+        {
+            "label": "Created Issues",
+            "query": "author:${user} state:open repo:${owner}/${repository} sort:created-desc"
+        }
+    ],
+    "editor.minimap.enabled": false,
+    "sync.gist": "b94ca62ac1b496248ea4eb58b5bcb242",
+    "vscode-edge-devtools.mirrorEdits": true,
+    "workbench.editor.empty.hint": "hidden",
+    "settingsSync.ignoredExtensions": [
+        "usqlextpublisher.usql-vscode-ext"
+    ],
+    "githubPullRequests.pullBranch": "never",
+    "terminal.integrated.customGlyphs": false,
+    "window.titleBarStyle": "custom",
+    "security.workspace.trust.untrustedFiles": "open",
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "terminal.integrated.useWslProfiles": false,
+    "media.player": {},
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "workbench.colorTheme": "Moonlight II",
+    "mssql.enableRichExperiences": true,
+    "window.customTitleBarVisibility": "auto"
+}
