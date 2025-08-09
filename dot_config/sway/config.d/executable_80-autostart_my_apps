@@ -144,10 +144,10 @@ exec sleep 30 && alpaca_search_provider
 ########################################
 
 # Start Teams
-exec sleep 30 && teams
+# exec sleep 30 && teams
 
 # Start Slack
-exec sleep 30 && slack
+# exec sleep 30 && slack
 
 ######################################
 # Email                              #
@@ -196,7 +196,7 @@ exec sleep 30 && portfolio
 # Samsung Galaxy Note 9
 # (usb)  29945745161c7ece                device  SM_N960U1
 # Device: [samsung] samsung SM-N960U1 (Android 10)
-exec sleep 30 && scrcpy --tcpip --no-audio --stay-awake  --window-width=9 --window-height=16 --window-borderless --legacy-paste
+# exec sleep 30 && scrcpy --tcpip --no-audio --stay-awake  --window-width=9 --window-height=16 --window-borderless --legacy-paste
 
 # Start localsend
 exec sleep 30 && localsend --hidden

@@ -16,15 +16,15 @@
 # OPNSense
 # exec sleep 40 && firefoxpwa site launch 01J4NK309P295D8HMYH0J5Y07K
 # Portainer
-exec sleep 40 && firefoxpwa site launch 01J4MB4EFNN3S8JX1XDQ0JKBYC
+# exec sleep 40 && firefoxpwa site launch 01J4MB4EFNN3S8JX1XDQ0JKBYC
 # DNS 1
-exec sleep 40 && firefoxpwa site launch 01J4MAZZJAVFQYEWDE066EZKEQ
+# exec sleep 40 && firefoxpwa site launch 01J4MAZZJAVFQYEWDE066EZKEQ
 # DNS 2
-exec sleep 40 && firefoxpwa site launch 01J4MB0A3CJYRMR1GEPMCRSVZS
+# exec sleep 40 && firefoxpwa site launch 01J4MB0A3CJYRMR1GEPMCRSVZS
 # Grafana
-exec sleep 40 && firefoxpwa site launch 01J4MB2HKQPR64QQRCSBVKJZAD
+# exec sleep 40 && firefoxpwa site launch 01J4MB2HKQPR64QQRCSBVKJZAD
 # NXRP
-exec sleep 40 && firefoxpwa site launch 01J99GQHAK49961EKBP6ZKXQKK
+# exec sleep 40 && firefoxpwa site launch 01J99GQHAK49961EKBP6ZKXQKK
 
 
 ########################################
@@ -36,7 +36,7 @@ exec sleep 40 && firefoxpwa site launch 01J99GQHAK49961EKBP6ZKXQKK
 # Start DTIG ADO
 # exec sleep 50 && firefoxpwa site launch 01J7BY8P960F6KGBK05ZDWQ40B
 # Start DTIG Synology
-exec sleep 50 && firefoxpwa site launch 01J3N5Q88YHY7J4D6B8PM27P85
+# exec sleep 50 && firefoxpwa site launch 01J3N5Q88YHY7J4D6B8PM27P85
 # Start DTIG To-Do
 # exec sleep 50 && firefoxpwa site launch 01J5NM5W9PRMV62DEJJQBGHR17
 # Start DTIG IT Tools
