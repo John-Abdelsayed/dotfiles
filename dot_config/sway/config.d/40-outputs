@@ -25,8 +25,8 @@
 ####################
 
 set $displaytv      "Samsung Electric Company SAMSUNG 0x01000000"
-set $display3       "LG "
-set $display4       "LG "
+set $displayright       "Ancor Communications Inc VS278 JALMQS041754"
+set $displayleft       "Ancor Communications Inc VS278 JALMQS041752"
 
 output "eDP-1" {
     mode  1920x1200@59.95Hz
@@ -37,7 +37,7 @@ output "eDP-1" {
     adaptive_sync on
     dpms on
 }
-output "display4" {
+output "displayleft" {
     mode  1920x1080@60.0Hz
     pos 1920 0
     transform normal
@@ -46,7 +46,7 @@ output "display4" {
     adaptive_sync on
     dpms on
 }
-output "display3" {
+output "displayrightt" {
     mode  1920x1080@60.0Hz
     pos 3840 0
     transform normal
