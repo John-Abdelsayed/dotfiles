@@ -59,7 +59,7 @@ output "displayTV" {
     mode  3840x2160@30.0Hz
     pos 1920 0
     transform normal
-    scale 8.0
+    scale 1.0
     scale_filter nearest
     adaptive_sync on
     dpms on
