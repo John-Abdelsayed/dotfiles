@@ -56,10 +56,10 @@ output "display3" {
     dpms on
 }
 output "displayTV" {
-    mode  1920x1080@60.0Hz
+    mode  3840x2160@30.0Hz
     pos 1920 0
     transform normal
-    scale 1.5
+    scale 2.0
     scale_filter nearest
     adaptive_sync on
     dpms on
