@@ -46,7 +46,7 @@ output "displayleft" {
     adaptive_sync on
     dpms on
 }
-output "displayrightt" {
+output "displayright" {
     mode  1920x1080@60.0Hz
     pos 3840 0
     transform normal
