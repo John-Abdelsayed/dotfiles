@@ -202,7 +202,7 @@
                     }
             },
             "custom/mediaplayer": {
-                "format": "{0} {1}",
+                "format": "{0} - {1}",
                 "return-type": "json",
                 "max-length": 60,
                 "on-click": "playerctl play-pause",
