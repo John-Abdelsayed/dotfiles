@@ -194,9 +194,16 @@ exec sleep 30 && portfolio
 
 # Start scrcpy
 # Samsung Galaxy Note 9
-# (usb)  29945745161c7ece                device  SM_N960U1
-# Device: [samsung] samsung SM-N960U1 (Android 10)
+# (usb)     29945745161c7ece
+# (device)  device  SM_N960U1
+# Device:   [samsung] samsung SM-N960U1 (Android 10)
 # exec sleep 30 && scrcpy --tcpip --no-audio --stay-awake  --window-width=9 --window-height=16 --window-borderless --legacy-paste
+# exec sleep 30 && scrcpy --select-usb --no-audio --stay-awake  --window-width=9 --window-height=16 --window-borderless --legacy-paste
+
+# Samsung Note Ultra 22
+# Device: [samsung] samsung SM-S908U (Android 15)
+# exec sleep 30 && scrcpy --tcpip --no-audio --stay-awake  --window-width=9 --window-height=16 --window-borderless --legacy-paste
+# exec sleep 30 && scrcpy --select-usb --no-audio --stay-awake  --window-width=9 --window-height=16 --window-borderless --legacy-paste
 
 # Start localsend
 exec sleep 30 && localsend --hidden
