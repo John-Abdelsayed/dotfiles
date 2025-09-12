@@ -107,7 +107,7 @@ set $alt_calc qalculate-gtk
 #######################################
 
 # Application launcher - Fuzzel
-set $launcher fuzzel
+set $launcher nwg-menu
 
 # Application launcher - NWG Menu
 set $alt_launcher nwg-menu
