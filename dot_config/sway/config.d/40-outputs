@@ -24,11 +24,12 @@
 # Manages displays
 ####################
 
+set $laptopdisplay  "Sharp Corporation 0x14CB Unknown"
 set $displaytv      "Samsung Electric Company SAMSUNG 0x01000000"
 set $displayright   "Ancor Communications Inc VS278 JALMQS041752"
 set $displayleft    "Ancor Communications Inc VS278 JALMQS041754"
 
-output "eDP-1" {
+output "laptopdisplay" {
     mode  1920x1200@59.95Hz
     pos 0 0
     transform normal
