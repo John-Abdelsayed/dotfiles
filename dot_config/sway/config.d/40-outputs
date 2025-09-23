@@ -30,7 +30,7 @@ set $displayright   "Ancor Communications Inc VS278 JALMQS041752"
 set $displayleft    "Ancor Communications Inc VS278 JALMQS041754"
 
 output "laptopdisplay" {
-    mode  1920x1200@59.95Hz
+    mode  1920x1200@60.0Hz
     pos 0 0
     transform normal
     scale 1.0
@@ -58,7 +58,7 @@ output "displayright" {
 }
 output "displayTV" {
     mode  3840x2160@30.0Hz
-    pos 0 1200
+    pos 1200 0
     transform normal
     scale 4.0
     scale_filter nearest
