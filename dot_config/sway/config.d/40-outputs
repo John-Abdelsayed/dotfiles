@@ -26,11 +26,11 @@
 
 set $laptopdisplay  "Sharp Corporation 0x14CB Unknown"
 set $displaytv      "Samsung Electric Company SAMSUNG 0x01000000"
-set $displayleft   "Ancor Communications Inc VS278 JALMQS041752"
-set $displayright    "Ancor Communications Inc VS278 JALMQS041754"
+set $displayleft    "Ancor Communications Inc VS278 JALMQS041752"
+set $displayright   "Ancor Communications Inc VS278 JALMQS041754"
 
 output "laptopdisplay" {
-    mode  1920x1200@60.0Hz
+    mode  1920x1200@59.50Hz
     pos 0 0
     transform normal
     scale 1.0
