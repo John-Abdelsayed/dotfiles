@@ -1,4 +1,16 @@
-## App Souring
+# Taken from https://www.lorenzobettini.it/2024/06/environment-variables-in-sway/
+# Where can environment variables be specified when using Sway?
+# In my experiments, ~/.profile is not loaded (either when logging in or using SDDM). Instead, “~/.bash_profile” and “~/.zshenv” should be used for BASH and ZSH, respectively.
+# So, in those files, source ~/.profile explicitly
+#
+#       [[ -f ~/.profile ]] && . ~/.profile
+# Lets put the environment variable declaration and export into ~/.profile
+# For styling
+#
+#       export QT_QPA_PLATFORMTHEME=qt5ct
+# Exit Sway and get back in, and now qt6ct is happy:
+
+## App Sourcing
 # broot
 source /home/b0nz1cu5/.config/broot/launcher/bash/br
 
@@ -28,3 +40,5 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 export QT_PLATFORMTHEME=qt5ct
 export QT_PLATFORM_PLUGIN=qt5ct
 # export QT_STYLE_OVERRIDE=Fusion
+
+export $(/usr/lib/systemd/user-environment-generators/30-systemd-environment-d-generator)
