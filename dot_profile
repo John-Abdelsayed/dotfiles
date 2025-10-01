@@ -16,15 +16,15 @@ source /home/b0nz1cu5/.config/broot/launcher/bash/br
 
 ##
 # Displays
-#export WAYLAND_DISPLAY=wayland-0
-#export DISPLAY=:0
+#export WAYLAND_DISPLAY=wayland-1
+#export DISPLAY=$WAYLAND_DISPLAY
 
 # Xserver
 export XCURSOR_THEME=Adwaita
 export XCURSOR_SIZE=32
 
 # GDK
-# export GDK_BACKEND=x11
+export GDK_BACKEND=x11
 
 # XDG
 export XDG_CURRENT_DESKTOP=sway
@@ -41,4 +41,4 @@ export QT_PLATFORMTHEME=qt5ct
 export QT_PLATFORM_PLUGIN=qt5ct
 # export QT_STYLE_OVERRIDE=Fusion
 
-export $(/usr/lib/systemd/user-environment-generators/30-systemd-environment-d-generator)
+# export $(/usr/lib/systemd/user-environment-generators/30-systemd-environment-d-generator)
