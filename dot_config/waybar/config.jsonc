@@ -94,7 +94,7 @@
                 "show-passive-items": true
             },
             "sway/scratchpad": {
-                "format": "{icon} {count}",
+                "format": "{icon} : {count}",
                 "show-empty": true,
                 "format-icons": [
                     "",
@@ -102,6 +102,47 @@
                 ],
                 "tooltip": true,
                 "tooltip-format": "{app}: {title}"
+            },
+            "custom/cava": {
+                    "exec": "sleep 3 && cava -p ${HOME}/.config/cava/config | sed -u 's/;//g;s/0/0/g;s/1/1/g;s/2/2/g;s/3/3/g;s/4/4/g;s/5/5/g;s/6/6/g;s/7/7/g;s/8/8/g;s/9/9/g;'",
+                    "bars": 8,
+                    "lower_cutoff_freq": 50,
+                    "higher_cutoff_freq": 10000,
+                    "method": "auto",
+                    "source": "auto",
+                    "stereo": true,
+                    "reverse": false,
+                    "bar_delimiter": 0,
+                    "monstercat": false,
+                    "waves": false,
+                    "noise_reduction": 0.77,
+                    "input_delay": 2,
+                    "format-icons": [
+                        "▁",
+                        "▂",
+                        "▃",
+                        "▄",
+                        "▅",
+                        "▆",
+                        "▇",
+                        "█"
+                    ],
+                    "actions": {
+                        "on-click-right": "mode"
+                    }
+            },
+            "custom/mediaplayer": {
+                "format": "{0} - {1}",
+                "return-type": "json",
+                "max-length": 60,
+                "on-click": "playerctl play-pause",
+                "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+                "on-click-middle": "playerctl metadata",
+                "smooth-scrolling-threshold": 1,
+                "on-scroll-up": "playerctld shift",
+                "on-scroll-down": "playerctld unshift",
+                "escape": true,
+                "exec": "${HOME}/.config/waybar/mediaplayer.py 2> /dev/null"
             },
             "privacy": {
                 "icon-spacing": 4,
@@ -173,47 +214,7 @@
                 "on-click": "pavucontrol",
                 "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
             },
-            "custom/cava": {
-                    "exec": "sleep 3 && cava -p ${HOME}/.config/cava/config | sed -u 's/;//g;s/0/0/g;s/1/1/g;s/2/2/g;s/3/3/g;s/4/4/g;s/5/5/g;s/6/6/g;s/7/7/g;s/8/8/g;s/9/9/g;'",
-                    "bars": 8,
-                    "lower_cutoff_freq": 50,
-                    "higher_cutoff_freq": 10000,
-                    "method": "auto",
-                    "source": "auto",
-                    "stereo": true,
-                    "reverse": false,
-                    "bar_delimiter": 0,
-                    "monstercat": false,
-                    "waves": false,
-                    "noise_reduction": 0.77,
-                    "input_delay": 2,
-                    "format-icons": [
-                        "▁",
-                        "▂",
-                        "▃",
-                        "▄",
-                        "▅",
-                        "▆",
-                        "▇",
-                        "█"
-                    ],
-                    "actions": {
-                        "on-click-right": "mode"
-                    }
-            },
-            "custom/mediaplayer": {
-                "format": "{0} - {1}",
-                "return-type": "json",
-                "max-length": 60,
-                "on-click": "playerctl play-pause",
-                "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-                "on-click-middle": "playerctl metadata",
-                "smooth-scrolling-threshold": 1,
-                "on-scroll-up": "playerctld shift",
-                "on-scroll-down": "playerctld unshift",
-                "escape": true,
-                "exec": "${HOME}/.config/waybar/mediaplayer.py 2> /dev/null"
-            },
+            
             "custom/weather": {
                 "exec": "wttrbar --ampm --custom-indicator '{temp_F} {ICON} {FeelsLikeF}' --date-format '%m/%d' --location 'Lake Forest, IL' --hide-conditions",
                 "return-type": "json",
