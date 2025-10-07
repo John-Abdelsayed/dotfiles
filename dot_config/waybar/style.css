@@ -36,10 +36,10 @@
     }
 
     window#waybar.hidden {
-        opacity: 0.8;
+        opacity: 0.2;
     }
 
-
+/* Groups  */
 #activity,
 #control,
 #hardware,
@@ -52,57 +52,87 @@
     border-radius: 10px;
 }
 
-#activity,
-#control {
-    padding-left: 15px;
-    padding-right: 15px;
-    background: #383c4a;
+/* GROUP-SPECIFIC CSS */
+#privgroup {
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
-#backlight,
+#screenrecord {
+    background: #383c4a;
+    border-radius: 10px;
+    color: #ffffff;
+    transition: none;
+}
+
+#activity,
+#control,
+#system {
+    background: #383c4a;
+}
+/* END - GROUPS */
+
+/* TOP MODULES */
 #battery,
-#clock,
 #cpu,
 #disk,
-#idle_inhibitor,
 #keyboard-state,
 #language,
 #memory,
-#mode,
 #network,
-#power-profiles-daemon,
-#pulseaudio,
 #privacy,
 #privacy-item,
 #scratchpad,
 #temperature,
 #tray,
 #wireplumber {
-        background: #383c4a;
-        border-radius: 10px;
-        color: #ffffff;
-        transition: none;
-        padding: 5px;
+    background: #383c4a;
+    color: #ffffff;
+    transition: none;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 #custom-cava,
 #custom-containers,
 #custom-grimshot,
 #custom-keyboard-layout,
-#custom-launcher,
 #custom-mediaplayer,
 #custom-mem,
 #custom-weather,
 #custom-wfrecord,
 #custom-vm,
-#custom-notification,
 #custom-power {
-        background: #383c4a;
-        border-radius: 10px;
-        color: #ffffff;
-        transition: none;
-        padding-left: 5px;
-        padding-right: 5px;
+    background: #383c4a;
+    color: #ffffff;
+    transition: none;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+/* BOTTOM MODULES */
+#backlight,
+#clock,
+#idle_inhibitor,
+#mode,
+#power-profiles-daemon
+{
+    background: #383c4a;
+    border-radius: 10px;
+    color: #ffffff;
+    transition: none;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#custom-notification
+{
+    background: #383c4a;
+    border-radius: 10px;
+    color: #ffffff;
+    transition: none;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 #custom-launcher {

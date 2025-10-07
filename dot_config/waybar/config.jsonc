@@ -8,7 +8,7 @@
         "position": "top",
         "spacing": 6,
         "modules-left": [
-            "group/system-tray"
+            "group/activity"
         ],
         "modules-center": [
             "custom/cava",
@@ -22,11 +22,11 @@
             "group/hardware",
             "wireplumber"
         ],
-                "group/system-tray": {
+                "group/activity": {
                     "orientation": "inherit",
                     "drawer": {
                         "transition-duration": 500,
-                        "children-class": "system",
+                        "children-class": "activity",
                         "transition-left-to-right": true
                     },
                     "modules": [
