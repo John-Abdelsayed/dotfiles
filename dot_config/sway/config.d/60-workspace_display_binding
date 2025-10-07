@@ -60,7 +60,7 @@ workspace $ws19 output DP-4
 workspace $ws20 output eDP-1
 
 # Change Tasks to alternate screen
-workspace $ws21 output DP-3
+workspace $ws21 output eDP-1
 
 # Change Files to alternate screen
 workspace $ws22 output DP-3
@@ -80,7 +80,7 @@ workspace $ws26 output DP-3
 # Change Finance to main screen
 workspace $ws27 output DP-4
 
-# Change PKM to alternate screen
+# Change Databases to alternate screen
 workspace $ws28 output DP-3
 
 # Change Recreation to main source

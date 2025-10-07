@@ -47,7 +47,7 @@ exec /usr/lib/sway-systemd/assign-cgroups.py
 exec /usr/lib/sway-systemd/session.sh
 
 
-# Exports any env vars from nside ~/.config/environment.d/
+# Exports any env vars from inside ~/.config/environment.d/
 exec export $(/usr/lib/systemd/user-environment-generators/30-systemd-environment-d-generator)
 
 ######################################
@@ -68,52 +68,26 @@ exec export $(/usr/lib/systemd/user-environment-generators/30-systemd-environmen
 # Upstream refuses to set XDG_CURRENT_DESKTOP so we have to.
 exec systemctl --user set-environment XDG_CURRENT_DESKTOP=sway
 exec systemctl --user import-environment DISPLAY \
-                                         SWAYSOCK \
-                                         WAYLAND_DISPLAY \
-                                         XDG_CURRENT_DESKTOP \
-					 I3SOCK \
-					 XCURSOR_SIZE \
-					 XCURSOR_THEME
+                                             SWAYSOCK \
+                                             WAYLAND_DISPLAY \
+                                             XDG_CURRENT_DESKTOP \
+					                    I3SOCK \
+					                    XCURSOR_SIZE \
+					                    XCURSOR_THEME
 
 exec hash dbus-update-activation-environment 2>/dev/null && \
      dbus-update-activation-environment --systemd DISPLAY \
                                                   SWAYSOCK \
                                                   XDG_CURRENT_DESKTOP=sway \
                                                   WAYLAND_DISPLAY \
-						  I3SOCK \
-						  XCURSOR_SIZE \
-						  XCURSOR_THEME
-
-# Export should be performed from context of running sway process, via exec statements in sway's configuration:
-#exec systemctl --user import-environment WAYLAND_DISPLAY DISPLAY XDG_CURRENT_DESKTOP SWAYSOCK I3SOCK XCURSOR_SIZE XCURSOR_THEME
-#If dbus-broker dbus implementation is used, that's it. It reuses activation environment of systemd.
-
-# If classic dbus implementation is used, it requires updating its own separate environment:
-#exec dbus-update-activation-environment WAYLAND_DISPLAY DISPLAY XDG_CURRENT_DESKTOP SWAYSOCK I3SOCK XCURSOR_SIZE XCURSOR_THEME
-
-          # This may be obsolete or deprecated due to the above
-          ######################################
-          # dbus
-          ######################################
-
-          # Update dbux environments with display variables
-          #exec hash dbus-update-activation-environment 2>/dev/null && \
-          #     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
-
-          # exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
-
-
+						                    I3SOCK \
+                                                  XCURSOR_SIZE \
+						                    XCURSOR_THEME
 
 
 ######################################
 # Polkit
 ######################################
 
-# Auth with gnome polkit-gnome:
-exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-
-# Auth with polkit
-#exec /usr/lib/polkit/polkit/polkit-1
-
-# Auth with lxpolkit
-#exec /usr/bin/lxpolkit
+# Auth with XFCE polkit 
+/usr/lib/xfce-polkit/xfce-polkit

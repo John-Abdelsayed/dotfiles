@@ -10,16 +10,18 @@
 # By Window Type
 ###################
 
+###  ALL WINDOWS!!!
 
+for_window [title="^.*"] title_format "" default_border normal 0 default_floating_border normal 0
 # By Shell
 # Title format for windows
 # THIS IS USED FOR OBTAINING WINDOW TITLE INFORMATION!
 # This section is often un/commented.
 # For applications using xwayland, add 'XWayland' to the TITLE
-for_window [shell="xwayland"] title_format "[XWayland] - %title"
-for_window [shell="x_wayland"] title_format "[XWayland] - %title"
+#for_window [shell="xwayland"] title_format "[XWayland] - %title"
+#for_window [shell="x_wayland"] title_format "[XWayland] - %title"
 # For applications using XDG, add 'XWayland' to the TITLE
-for_window [shell="xdg_shell"] title_format "[XWayland-XDG] - %title"
+#for_window [shell="xdg_shell"] title_format "[XWayland-XDG] - %title"
 
 # By window role
 for_window [window_role="pop-up"] floating enable
@@ -146,6 +148,7 @@ for_window [app_id="mousepad"] floating enable, sticky enable, border pixel 1, r
 ###################
 
 for_window [app_id="galculator"] floating enable, sticky enable, border pixel 1, resize set width 20 ppt height 30 ppt
+for_window [app_id="Qalculate"] floating enable, sticky enable, border pixel 1, resize set width 40 ppt height 60 ppt
 
 ###################
 # OpenSnitch
@@ -182,8 +185,9 @@ for_window [instance="scrcpy" class="scrcpy"] floating enable, border pixel 1, r
 # Focus XFCE term on open
 for_window [class="(?i)xfce4-terminal"] focus
 
-# Focus on galculator
+# Focus on Calculator
 for_window [app_id="galculator"] focus
+for_window [app_id="qalculator"] focus
 
 # Focus FF term on open
 for_window [app_id="firefox"] focus

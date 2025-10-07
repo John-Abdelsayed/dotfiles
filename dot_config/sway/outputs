@@ -1,0 +1,304 @@
+### Output configuration
+#
+# Set specific displays to specific variables
+# set $display1       "Dell Inc. DELL P2414H VHVTW542165L"
+# set $display2       "Dell Inc. DELL P2418HT MYDM775F152L"
+#
+# Example configuration:
+#
+#   output HDMI-A-1 resolution 1920x1080 position 1920,0
+#
+# You can get the names of your outputs by running: swaymsg -t get_outputs
+#
+# You can also bind workspaces 1,2,3 to specific outputs
+#
+# workspace 1 output eDP-2
+# workspace 2 output HDMI-A-1
+# workspace 3 output DP-1
+#
+# Wacom Tablet - Example
+#   input "1386:884:Wacom_Intuos_S_Pad" map_to_output HDMI-A-1
+#   input "1386:884:Wacom_Intuos_S_Pen" map_to_output HDMI-A-1
+
+####################
+# Manages displays
+####################
+
+set $laptopdisplay  "Sharp Corporation 0x14CB Unknown"
+set $displaytv      "Samsung Electric Company SAMSUNG 0x01000000"
+set $displayleft    "Ancor Communications Inc VS278 JALMQS041752"
+set $displayright   "Ancor Communications Inc VS278 JALMQS041754"
+
+output "laptopdisplay" {
+    mode  1920x1200@59.50Hz
+    pos 0 0
+    transform normal
+    scale 1.0
+    scale_filter nearest
+    adaptive_sync on
+    dpms on
+}
+output "displayleft" {
+    mode  1920x1080@60.0Hz
+    pos 1920 0
+    transform normal
+    scale 1.0
+    scale_filter nearest
+    adaptive_sync on
+    dpms on
+}
+output "displayright" {
+    mode  1920x1080@60.0Hz
+    pos 3840 0
+    transform normal
+    scale 1.0
+    scale_filter nearest
+    adaptive_sync on
+    dpms on
+}
+output "displayTV" {
+    mode  3840x2160@30.0Hz
+    pos 1200 0
+    transform normal
+    scale 4.0
+    scale_filter nearest
+    adaptive_sync on
+    dpms on
+}
+
+
+########################################
+# Program Binding and Focus            #
+########################################
+
+########## Terminals  ##########
+# XFCE Terminal
+assign [app_id="xfce4-terminal"] $ws1
+#Tilix
+assign [app_id="tilix"] $ws3
+
+
+########## Security ##########
+# Bitwarden
+assign [class="(?i)Bitwarden"] $ws2
+# KeePassXC
+assign [app_id="KeePassXC"] $ws2
+
+
+########## Browsers ##########
+# Chromium
+assign [class="(?i)Chromium"] $ws4
+# Firefox
+assign [app_id="firefox"] $ws5
+# Librewolf
+assign [app_id="LibreWolf"] $ws6
+
+
+########## Dev ##########
+# VSCodium
+assign [class="(?i)vscodium"] $ws7
+# Emacs
+assign [class="(?i)Emacs"] $ws8
+# Yaade
+assign [app_id="FFPWA-01J4MB56YS9XN8FKG4PQG2Y74X"] $ws8
+# GitHub Desktop
+assign [class="(?i)Github Desktop"] $ws8
+# GitHub
+assign [app_id="FFPWA-01J4MCFGNV9PRWNN7F9B7AX45A"] $ws8
+# Gitea
+assign [app_id="FFPWA-01J48SZ63W0CB8CEDYDWV683GK"] $ws8
+# IT Tools
+assign [app_id="FFPWA-01J4MB3VG5W7XP15VEKTN13BBQ"] $ws8
+
+
+########## Chat ##########
+# MS Teams
+assign [class="(?i)teams"] $ws9
+# Slack
+assign [app_id="Slack"] $ws9
+# Telegram
+# assign [app_id="org.telegram.desktop"] $ws9
+# Ripcord
+assign [app_id="(?i)Ripcord"] $ws9
+
+
+########## Email ##########
+# Evolution
+assign [app_id="org.gnome.Evolution"] $ws10
+# Thunderbird
+assign [app_id="thunderbird"] $ws10
+
+
+########## Tasks ##########
+# AO
+assign [class="(?i)ao"] $ws11
+# Kuro
+assign [class="(?i)kuro"] $ws11
+# To-Do
+assign [app_id="FFPWA-01J5NM5W9PRMV62DEJJQBGHR17"] $ws11
+# Super Productivity
+assign [app_id="Super Productivity"] $ws11
+assign [class="(?i)superProductivity"] $ws11
+# Joplin
+assign [app_id="joplin"] $ws11
+# Sleek
+assign [class="(?i)sleek"] $ws11
+
+
+########## File Explorer ##########
+# Nautilus
+assign [app_id="org.gnome.Nautilus"] $ws12
+# Thunar
+assign [app_id="thunar"] $ws12
+# Qbittorrent
+assign [class="(?i)qbittorrent"] $ws12
+# FileZilla
+assign [app_id="FileZilla"] $ws12
+# Synology DSM
+assign [app_id="FFPWA-01J3N5Q88YHY7J4D6B8PM27P85"] $ws12
+# Paperless
+assign [app_id="FFPWA-01J85ZGQNW5110KGPP261H3254"] $ws12
+
+########## Infrastructure ##########
+# OPNSense
+assign [app_id="FFPWA-01J4NK309P295D8HMYH0J5Y07K"] $ws13
+# Portainer
+assign [app_id="FFPWA-01J4MB4EFNN3S8JX1XDQ0JKBYC"] $ws13
+# DNS 1
+assign [app_id="FFPWA-01J4MAZZJAVFQYEWDE066EZKEQ"] $ws13
+# DNS 2
+assign [app_id="FFPWA-01J4MB0A3CJYRMR1GEPMCRSVZS"] $ws13
+# Grafana
+assign [app_id="FFPWA-01J4MB2HKQPR64QQRCSBVKJZAD"] $ws13
+# NXRP
+assign [app_id="FFPWA-01J99GQHAK49961EKBP6ZKXQKK"] $ws13
+
+
+########## Office ##########
+# LibreOffice Writer
+assign [app_id="libreoffice-writer"] $ws14
+# LibreOffice Calc
+assign [app_id="libreoffice-calc"] $ws14
+# LibreOffice Impress
+assign [app_id="libreoffice-impress"] $ws14
+# LibreOffice Math
+assign [app_id="libreoffice-math"] $ws14
+
+
+########## O365 ##########
+# Azure
+assign [app_id="FFPWA-01J7BY3T600KJFZN49YE1BWTSN"] $ws15
+# O365 Admin
+assign [app_id="FFPWA-01J7BY8P960F6KGBK05ZDWQ40B"] $ws15
+
+
+########### AGI ##########
+# ChatGPT
+assign [app_id="chat-gpt"] $ws16
+# Alpaca
+assign [app_id="com.jeffser.Alpaca"] $ws16
+# Chatall
+assign [class="(?i)Chatall"] $ws16
+# HuggingChat
+assign [app_id="FFPWA-01GZ809WW5Y34MADZE4D0TAVHS"] $ws16
+
+
+########## Finance ##########
+# homebank
+assign [app_id="homebank"] $ws17
+# Portfolio Performance
+assign [app_id="Portfolio Performance"] $ws17
+# Xero
+assign [app_id="FFPWA-01H8HBEQRHJXVWDV7CY6XAZ8AW"] $ws17
+# QBO
+assign [app_id="FFPWA-01GZ1M1VY13T291BVVV5TSGE4Z"] $ws17
+# Chase
+assign [app_id="FFPWA-01H960MR2RSEP4QVPCH0BX2X47"] $ws17
+
+
+########## PKM ##########
+# logseq
+assign [class="(?i)logseq"] $ws18
+# Obsidian
+assign [class="(?i)obsidian"] $ws18
+# Zotero
+assign [class="(?i)zotero"] $ws18
+
+
+############## Gaming ###############
+# Steam
+assign [class="(?i)steam"] $ws19
+# Heroic
+assign [class="(?i)heroic"] $ws19
+
+
+############## Media  ###############
+# Vlc
+assign [class="(?i)vlc"] $ws20
+# Netflix
+assign [app_id="FFPWA-01JCSK69G2GM70FNAPA4DS5M0X"] $ws20
+# SMPlayer
+assign [app_id="(?i)SMPlayer"] $ws20
+# Spotify
+assign [class="(?i)Spotify"] $ws20
+# Strawberry
+assign [class="(?i)strawberry"] $ws20
+
+
+######### Phone ###################
+# scrcpy
+assign [class="(?i)scrcpy"] $ws21
+assign [title="SM-N960U1"] $ws21
+
+
+########### Android ##############
+# Android Studio
+assign [class="(?i)jetbrains-studio"] $ws22
+
+
+########## Music ###########
+# MuseScore
+assign [class="(?i)MuseScore4"] $ws23
+# Ardour
+assign [class="(?i)Ardour"] $ws23
+
+
+######### Drawing  #########
+# Inkscape
+assign [app_id="org.inkscape.Inkscape"] $ws25
+# LibreDraw
+assign [app_id="libreoffice-draw"] $ws25
+# GIMP
+assign [app_id="gimp-3.0"] $ws25
+
+
+######### Animation #########
+# OpenToonz
+assign [app_id="OpenToonz"] $ws26
+# Blender
+assign [app_id="blender"] $ws26
+
+######### 3-D ##########
+# Bambu Studio
+assign [class="(?i)BambuStudio"] $ws27
+# Ultimaker Cura
+assign [class="(?i)UltiMaker-Cura"] $ws27
+# OpenSCAD
+assign [app_id="org.openscad.OpenSCAD"] $ws27
+
+
+######### Database ########
+# DBeaver
+assign [app_id="DBeaver"] $ws28
+# LibreOffice Base
+assign [app_id="libreoffice-base"] $ws28
+
+
+######## Remote  ##########
+# Remote
+assign [app_id="rustdesk"] $ws29
+
+
+######### VM ##############
+# Remote
+assign [class="(?i)VirtualBox Manager"] $ws30

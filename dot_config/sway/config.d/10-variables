@@ -66,7 +66,7 @@ set $ws30  "30: - VM-Docker"
 set $term foot
 
 # Set default terminal emulator (Wayland)
-set $alt_term tilix
+set $alt_term REDDIX_FORCE_KITTY=1 alacritty
 
 # Set guake
 set $guaketoggle guake-toggle
