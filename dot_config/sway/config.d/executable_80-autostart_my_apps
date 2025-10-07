@@ -57,7 +57,7 @@ exec_always nwg-autotiling
 # Start notification daemon
 exec swaync -c $HOME/.config/swaync/config.jsonc -s $HOME/.config/swaync/preset-0.css
 
-# Set wallpaper
+# Set wallpaper (swaybg required for variety to work properly)
 exec swaybg
 exec variety
 
@@ -102,7 +102,7 @@ exec sleep 10 && opensnitch-ui
 exec sleep 10 && bitwarden-desktop
 
 # Start YubiKey Manager
-exec sleep 10 && yubioath-desktop
+exec sleep 10 && yubioath-desktop --start-hidden
 
 ########################################
 #  Office and Productivity #############
@@ -188,25 +188,6 @@ exec sleep 30 && homebank
 # Start Portfolio
 exec sleep 30 && portfolio
 
-########################################
-# Phone and Other Devices              #
-########################################
-
-# Start scrcpy
-# Samsung Galaxy Note 9
-# (usb)     29945745161c7ece
-# (device)  device  SM_N960U1
-# Device:   [samsung] samsung SM-N960U1 (Android 10)
-# exec sleep 30 && scrcpy --tcpip --no-audio --stay-awake  --window-width=9 --window-height=16 --window-borderless --legacy-paste
-# exec sleep 30 && scrcpy --select-usb --no-audio --stay-awake  --window-width=9 --window-height=16 --window-borderless --legacy-paste
-
-# Samsung Note Ultra 22
-# Device: [samsung] samsung SM-S908U (Android 15)
-# exec sleep 30 && scrcpy --tcpip --no-audio --stay-awake  --window-width=9 --window-height=16 --window-borderless --legacy-paste
-# exec sleep 30 && scrcpy --select-usb --no-audio --stay-awake  --window-width=9 --window-height=16 --window-borderless --legacy-paste
-
-# Start localsend
-exec sleep 30 && localsend --hidden
 
 ########################################
 # Media                                #
